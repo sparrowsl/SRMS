@@ -1,0 +1,36 @@
+ul{
+    list-style-type: none;
+    margin-bottom: 1em;
+}
+
+.user-details span a{
+    color: blue;
+    text-decoration: underline;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /*align-items: center;*/
+    gap: 10px;
+}
+
+table{
+    overflow: visible;
+}
+
+.btn-info{
+    background-color: skyblue;
+}
+
+.btn{
+    border: none;
+}
+
+@media screen and (min-width: 750px){
+    main{
+        flex-direction: row;
+        background-color: red;
+    }
+}
