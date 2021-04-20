@@ -1,48 +1,39 @@
 *, *::after, *::before{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    width: 98%;
-    /*height: 100%;*/
-    margin: auto;
-    font-family: sans-serif;
-    display: grid;
+html{ font-size: 62.5%; }
+body{ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+
+.welcome{
+    max-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+    justify-content: center;
+    padding: 2em 1em;
     align-items: center;
-    /*background: linear-gradient(35deg, #ccffff, #ffcccc);*/
-    background-color: #ccffff;
+    color: white;
+    background-color: #4A7BE6;
 }
 
-main{
-    width: 100%;
-    margin: auto;
-    padding: 20px 10px;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.welcome h2{ font-weight: lighter; }
+.welcome h1{
+    text-align: center;
+    font-size: 3.5rem;
 }
-
-#logo{
-    height: 100px;
-    padding: 10px;
-    align-self: flex-start;
-    font-family: cursive;
-    font-size: 30px;
-    font-weight: bolder;
-    color: #475EDE;
-    display: none;
-}
-
-.form-wrapper{
-    display: grid;
-    align-content: center;
+.welcome p{ font-size: 1.5rem; }
+.welcome hr{
+    border:1px solid black;
+    width: 70%;
+    margin: 1em 0;
 }
 
 form{
-    display: grid;
-    grid-gap: 20px;
+    width: 90%;
+    margin: 0 auto;
 }
 
 form label{
@@ -50,109 +41,72 @@ form label{
     font-weight: lighter;
     letter-spacing: 2px;
     color: grey;
-    font-size: 15px;
+    font-size: 1.6rem;
 }
 
-form div{
-    margin-bottom: 10px;
-}
-
+form div{ margin: 4em 0; }
 form input[type="email"],
 form input[type="password"]{
     width: 90%;
-    padding: 10px 1px;
+    padding: .65em .4em;
     border: none;
     border-bottom: 1px solid silver;
-    outline: none;
-    font-size: 19px;
-    background-color: transparent;
+    outline: 0;
+    font-size: 1.75rem;
 }
-
+::placeholder{ color: silver; }
 .remember-me{
-    display: inline;
+    display: inline-block;
     letter-spacing: 1px;
+    margin-left: .3em;
 }
 
 .buttons{
+    margin-top: -1.5em;
     display: flex;
-    grid-gap: 15px;
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 button{
-    display: inline-block;
-    width: 200px;
-    padding: 10px;
-    border: 1px solid grey;
-    border-radius: 15px;
+    display: inline;
+    padding: .7em 2.2em;
+    border: none;
+    border-radius: 2px;
     font-weight: bold;
-    font-family: monospace;
-    background-color: #000BD4;
+    font-size: 1.6rem;
+    background-color: #3490de;
     color: white;
     cursor: pointer;
 }
 
-.create-account{
-    background-color: #D3E3Ff;
-    color: black;
-    transition: background 0.3s ease;
-    border-color: #91BEFA;
+.buttons a{
+    text-decoration: underline;
+    display: inline-block;
+    padding: .7em 1.6em;
+    color: #3490de;
+    font-size: 1.6rem;
 }
 
-.create-account:hover{
-    background-color: #91BEFA;
-    /*color: black;*/
+
+@media screen and (min-width: 400px){
+    .welcome{ padding: 3em 1em; }
+    form{ width: 80%; }
 }
 
-form p{
-    text-indent: 20px;
-    color: grey;
+@media screen and (min-width: 550px){
+    .welcome hr{ width: 50%; }
+    form{ width: 70%; }
 }
 
-.dashboard{
-    display: flex;
-    flex-direction: column;
-    grid-gap: 10px;
-    align-items: flex-start; 
-    justify-content: center;
-    padding-left: 10%;
-    color: white;
-    border-radius: 3px;
-    background-image: linear-gradient(to right, #007BD4, #0C53EB);
-    order: -1;
+@media screen and (min-width: 750px){
+    .welcome hr{ width: 40%; }
+    form{ width: 50%; }
+    button:hover{ background-color: #3d84a8; }
 }
 
-.dashboard h2{
-    font-weight: lighter;
-    font-size: 18px;
+@media screen and (min-width: 1000px){
+    .welcome hr{ width: 30%; }
+    form{ width: 40%; }
 }
-
-.dashboard h1{
-    font-size: 40px;
-}
-
-.dashboard hr{
-    color: white;
-    width: 40%;
-    margin: 10px 0px;
-}
-
-.dashboard p{
-    font-size: 16px;
-}
-
-a{
-    text-decoration: none;
-    font-family: arial;
-}
-
-a:visited{
-    color: blue;
-}
-
-/*hr{
-    width: 40%;
-    background-color: white;
-    color: white;
-    border: 2px solid red;
-}
-*/

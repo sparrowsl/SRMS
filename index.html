@@ -13,44 +13,42 @@
 
 <body>
     <main>
-        <div class="form-wrapper">
-            <div id="logo">LOGO</div>
-
-            <form>
-                <div>
-                    <label for="email">EMAIL</label>
-                    <input type="email" name="email" placeholder="johndoe@email.com" id="email">
-                </div>
-
-                <div>
-                    <label for="password">PASSWORD</label>
-                    <input type="password" name="password" placeholder="********" id="password">
-                </div>
-
-                <div>
-                    <input type="checkbox" name="remember-me" id="remember-me">
-                    <label for="remember-me" class="remember-me">Remember Me</label>
-                </div>
-
-                <div class="buttons">
-                    <button type="submit">LOGIN</button>
-                    <button type="submit" class="create-account">CREATE ACCOUNT</button>
-                </div>
-
-                <p><a href="#">Forgot your password?</a> Get Help <a href="#">Signing In</a></p>
-            </form>
-        </div>
-
-        <div class="dashboard">
+        <section class="welcome">
             <h2>WELCOME TO</h2>
             <h1>Password Manager</h1>
             <hr>
             <p>Login to Access Dashboard</p>
-        </div>
+        </section>
+
+        <form action="#" method="POST">
+            <div>
+                <label for="email">EMAIL</label>
+                <input type="email" name="email" placeholder="johndoe@email.com" id="email" autofocus>
+            </div>
+
+            <div>
+                <label for="password">PASSWORD</label>
+                <input type="password" name="password" placeholder="********" id="password" autofocus>
+            </div>
+
+            <div>
+                <input type="checkbox" name="rememberMe" id="rememberMe">
+                <label for="rememberMe" class="remember-me">Remember Me</label>
+            </div>
+
+            <div class="buttons">
+                <button type="button" id="loginBtn">Login</button>
+                <a href="signup.html">Create Account</a>
+            </div>
+
+            <!-- TODO: <p><a href="#">Forgot your password?</a> Get Help <a href="#">Signing In</a></p> -->
+        </form>
     </main>
-<!-- 
+<!-- TODO:
     <footer>
         <small id="copyright">Copyright&copy; 2021</small>
-    </footer> -->
+    </footer>
+ -->
+ <script src="js/main.js"></script>
 </body>
 </html>
