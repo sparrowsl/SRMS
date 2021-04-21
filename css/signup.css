@@ -1,25 +1,39 @@
-body{
-    padding: 1em .5em;
+.home{
+    padding: .2em .5em;
+    font-size: 1.5rem;
+    font-family: Verdana, Geneva, sans-serif;
 }
 
-form{
-    margin: 1em auto;
-}
+.home a{ color: #3f72af; }
+form{ padding: .7em; }
 
-form button{
-    width: 100%;
-    font-weight: bold;
-    margin: 1em 0;
-}
-
-.copyright{
-    margin: 1em 0;
+form h3{ 
+    font-size: 3rem;
     text-align: center;
-    color: grey;
+    color: #393e46;
 }
 
-@media screen and (min-width: 500px){
-    form{
-        width: 70%;
-    }
+
+@media screen and (min-width: 400px){
+    form{ width: 80%; }
 }
+
+@media screen and (min-width: 550px){
+    .home{
+        margin-left: 5%; 
+        margin-top: 2%;
+    }
+    form{ width: 70%; }
+}
+
+@media screen and (min-width: 750px){
+    .home{ margin-left: 10%; }
+    form{ width: 50%; }
+    button:hover{ background-color: #3d84a8; }
+}
+
+@media screen and (min-width: 1000px){
+    form{ width: 40%; }
+}
+
+

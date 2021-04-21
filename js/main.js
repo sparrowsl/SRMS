@@ -8,4 +8,3 @@ loginBtn.addEventListener('click', function(){
 	console.log("Password: " + userPassword);
 	console.log("Remember: " + rememberMe);
 });
-
