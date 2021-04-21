@@ -2,16 +2,27 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Manager Details</title>
-    <link rel="stylesheet" href="css/csslite.css"/>
-    <link rel="stylesheet" href="css/details.css"/>
+    <title>Accounts Dashboard</title>
+
+    <!-- <link rel="stylesheet" href="css/csslite.css"/> -->
+    <link rel="stylesheet" href="css/dashboard.css"/>
 </head>
 <body>
     <header>
-        <h1>${user.username}: Accounts</h1>
+        <h1>${username}: Accounts</h1>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="signup.html">Signup</a></li>
+            <li><a href="settings.html">Settings</a></li>
+        </ul>
+    </nav>
+
     <main>
+        <div><a href="#">Add New Account</a></div>
+
         <table>
             <thead>
                 <tr>
@@ -25,26 +36,32 @@
                 <tr>
                     <td>Facebook</td>
                     <td>0123456789</td>
-                    <td><a href="#" class="btn btn-info">Edit</a></td>
-                    <td><a href="#" class="btn btn-error">Delete</a></td>
+                    <td><a href="#" class="editBtn">Edit</a></td>
+                    <td><a href="#" class="deleteBtn">Delete</a></td>
                 </tr>
                 <tr>
                     <td>Email</td>
                     <td>0238494000</td>
-                    <td><a href="#" class="btn btn-info">Edit</a></td>
-                    <td><a href="#" class="btn btn-error">Delete</a></td>
+                    <td><a href="#" class="editBtn">Edit</a></td>
+                    <td><a href="#" class="deleteBtn">Delete</a></td>
                 </tr>
                 <tr>
                     <td>Reddit</td>
                     <td>02380867</td>
-                    <td><a href="#" class="btn btn-info">Edit</a></td>
-                    <td><a href="#" class="btn btn-error">Delete</a></td>
+                    <td><a href="#" class="editBtn">Edit</a></td>
+                    <td><a href="#" class="deleteBtn">Delete</a></td>
                 </tr>
                 <tr>
                     <td>Slack</td>
                     <td>023846345</td>
-                    <td><a href="#" class="btn btn-info">Edit</a></td>
-                    <td><a href="#" class="btn btn-error">Delete</a></td>
+                    <td><a href="#" class="editBtn">Edit</a></td>
+                    <td><a href="#" class="deleteBtn">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>Github</td>
+                    <td>023892038403</td>
+                    <td><a href="#" class="editBtn">Edit</a></td>
+                    <td><a href="#" class="deleteBtn">Delete</a></td>
                 </tr>
             </tbody>
         </table>
