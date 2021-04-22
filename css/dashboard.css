@@ -1,62 +1,58 @@
-*{
+*, *::after, *::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 html{ font-size: 62.5%; }
+body{ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+
 header{
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh;
-    font-size: 3rem;
+    height: 20em;
     padding: .4em .3em;
 }
 
+header h1{ font-size: 5rem; }
 nav{
     position: sticky;
     top: 0;
-    padding: 1em .2em;
+    padding: 1em .4em;
     font-size: 4rem;
-    background-color: #355c7d;
+    background-color: #4A7BE6;
 }
 
 nav ul{
     display: flex;
-    grid-gap: 2em;
+    grid-gap: 1em;
     list-style-type: none;
 }
 
-nav li{
-    flex: 0 1 10px;
-    text-align: center;
-    padding: 0 .22em;
-}
-
+nav li{ text-align: center; }
 nav li:last-child{ margin-left: auto; }
 nav li a{
     color: #c9d6df;
     text-decoration: none;
-    font-family: monospace;
+    font-size: 5rem;
 }
 
 main{ margin-top: 5em; }
 main div a{
-    margin: 0 .3em;
+    margin: .6em .3em;
     display: inline-block;
-    padding: .7em;
-    font-size: 3rem;
+    padding: .65em;
+    font-size: 3.9rem;
     border-radius: 3px;
     text-decoration: none;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    background-color: #355c7d;
-    color: #dbe2ef;
+    color: white;
+    font-weight: bold;
+    background-color: #4A7BE6;
 }
 
 table{
-    font-size: 4rem;
     overflow: scroll;
     display: block;
     width: 100%;
@@ -65,16 +61,13 @@ table{
     border-collapse: collapse;
 }
 
-th{ 
-    border-top: 2px solid black;
-    font-family: monospace;
-}
-
+th{ border-top: 2px solid black; }
 th, td {
+    font-size: 4.5rem;
     border-left: 2px solid #e1e1e1;
-    padding: .5em .6em;
-    text-align: left;
     border-bottom: 1px solid #E1E1E1;
+    padding: .6em;
+    text-align: left;
 }
 
 td a{ font-family: Geneva, sans-serif; }
@@ -82,23 +75,37 @@ td a{ font-family: Geneva, sans-serif; }
 .editBtn{ color: #3282b8; }
 .editBtn, .deleteBtn{
     text-decoration: none;
-    padding: .4em .6em;
+    padding: 0 .6em;
 }
 
 @media screen and (min-width: 400px){
-    header{ padding: 2em; }
+    nav li a{ font-size: 4rem; }
+    main div a{ font-size: 3.5rem; }
+    th, td{ font-size: 3.8rem; }
 }
 
 @media screen and (min-width: 550px){
-    nav{ font-size: 3rem; }
-    main div a{ font-size: 2.5rem; }
-    table{ font-size: 3rem; }
+    header{ height: 15em; }
+    header h1{ font-size: 3.5rem; }
+    nav{ padding: .7em 2em; }
+    nav li a{ font-size: 3rem; }
+    main div a{ font-size: 2rem; }
+    th, td{ font-size: 2.6rem; }
+    table, main div{
+        width: 80%;
+        margin: auto;
+    }
 }
 
 @media screen and (min-width: 750px){
-    main{
-        width: 80%;
-        margin: auto;
-        margin-top: 2em;
+    header h1{ font-size: 3rem; }
+    nav{ padding: .5em 4em; }
+    nav li a{ font-size: 2.3rem; }
+    main div a{ font-size: 1.4rem; }
+    main{ margin-top: 2em; }
+    th, td{ font-size: 1.75rem; }
+    table, main div{
+        width: 55%;
+        overflow: visible;
     }
 }
