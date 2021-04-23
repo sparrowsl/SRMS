@@ -1,73 +1,71 @@
-*, *::after, *::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-html{ font-size: 62.5%; }
-body{ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+html{font-size: 62.5%;}
+body{font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;}
 
 header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20em;
-    padding: .4em .3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+  padding: .4em .3em;
 }
 
-header h1{ font-size: 5rem; }
+header h1{ font-size: 2rem; }
 nav{
-    position: sticky;
-    top: 0;
-    padding: 1em .4em;
-    font-size: 4rem;
-    background-color: #4A7BE6;
+  position: sticky;
+  top: 0;
+  padding: 1.5em 1em;
+  background-color: #4A7BE6;
 }
 
 nav ul{
-    display: flex;
-    grid-gap: 1em;
-    list-style-type: none;
+  display: flex;
+  grid-gap: 1em;
+  list-style-type: none;
 }
 
 nav li{ text-align: center; }
 nav li:last-child{ margin-left: auto; }
 nav li a{
-    color: #c9d6df;
-    text-decoration: none;
-    font-size: 5rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.6rem;
 }
 
-main{ margin-top: 5em; }
+main{ margin-top: 2em; }
 main div a{
-    margin: .6em .3em;
-    display: inline-block;
-    padding: .65em;
-    font-size: 3.9rem;
-    border-radius: 3px;
-    text-decoration: none;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    color: white;
-    font-weight: bold;
-    background-color: #4A7BE6;
+  margin: .5em .3em;
+  display: inline-block;
+  padding: .7em 1em;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: bolder;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #fff;
+  background-color: #4A7BE6;
 }
 
 table{
-    overflow: scroll;
-    display: block;
-    width: 100%;
-    white-space: nowrap;
-    margin-top: 1rem;
-    border-collapse: collapse;
+  overflow: scroll;
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  margin-top: 1rem;
+  border-collapse: collapse;
 }
 
 th{ border-top: 2px solid black; }
 th, td {
-    font-size: 4.5rem;
-    border-left: 2px solid #e1e1e1;
-    border-bottom: 1px solid #E1E1E1;
-    padding: .6em;
-    text-align: left;
+  font-size: 1.6rem;
+  border-left: 1px solid #e1e1e1;
+  border-bottom: 1px solid #E1E1E1;
+  padding: .6em;
+  text-align: left;
 }
 
 td a{ font-family: Geneva, sans-serif; }
@@ -76,36 +74,32 @@ td a{ font-family: Geneva, sans-serif; }
 .editBtn, .deleteBtn{
     text-decoration: none;
     padding: 0 .6em;
+    outline-color: inherit;
 }
 
+
 @media screen and (min-width: 400px){
-    nav li a{ font-size: 4rem; }
-    main div a{ font-size: 3.5rem; }
-    th, td{ font-size: 3.8rem; }
+  main{
+    width: 80%;
+    margin: 1em auto;
+  }
 }
 
 @media screen and (min-width: 550px){
-    header{ height: 15em; }
-    header h1{ font-size: 3.5rem; }
-    nav{ padding: .7em 2em; }
-    nav li a{ font-size: 3rem; }
-    main div a{ font-size: 2rem; }
-    th, td{ font-size: 2.6rem; }
-    table, main div{
-        width: 80%;
-        margin: auto;
-    }
+  main{ width: 65%; }
+  th, td{ font-size: 1.8rem; }
 }
 
 @media screen and (min-width: 750px){
-    header h1{ font-size: 3rem; }
-    nav{ padding: .5em 4em; }
-    nav li a{ font-size: 2.3rem; }
-    main div a{ font-size: 1.4rem; }
-    main{ margin-top: 2em; }
-    th, td{ font-size: 1.75rem; }
-    table, main div{
-        width: 55%;
-        overflow: visible;
-    }
+  nav ul{
+    justify-content: flex-end;
+    padding-right: 10%;
+  }
+  nav li:last-child{ margin-left: initial; }
+  nav li{ flex: 0 1 7em }
+  table{ overflow: visible; }
+  nav li a:hover{ color: black; }
+  main div a:hover{ background-color: royalblue; }
 }
+
+@media screen and (min-width: 1000px){}

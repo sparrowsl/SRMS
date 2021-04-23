@@ -1,5 +1,5 @@
 .welcome{
-    max-height: 50vh;
+    /*max-height: 40vh;*/
     display: flex;
     flex-direction: column;
     grid-gap: 10px;
@@ -45,6 +45,14 @@
     font-size: 1.6rem;
 }
 
+form p{
+    padding-top:10px;
+    font-size: 1.4rem;
+    font-style: italic;
+    text-align: center;
+    color: grey;
+}
+form p a{ color: blue; }
 
 @media screen and (min-width: 400px){
     .welcome{ padding: 3em 1em; }

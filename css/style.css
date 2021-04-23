@@ -46,6 +46,14 @@ button{
     cursor: pointer;
 }
 
+footer{
+    text-align: center;
+    margin-top: 1.3em;
+    font-size: 1.5rem;
+    color: grey;
+}
+
+
 @media screen and (min-width: 400px){
     form{ width: 80%; }
 }

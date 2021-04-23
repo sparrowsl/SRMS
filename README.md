@@ -1,9 +1,14 @@
-# password-manager
+# Password Manager
 
 A simple web app password manager for all your accounts
 
-- Generate passwords for you (optional)
+## Features
+
 - Stores password safely
+- Contains basic functionalities(ie: Edit, Delete)
+
+## Features to be added
+
+- Generate passwords for you (optional)
 - Hash passwords
 - Encryption functionality
-- Contain basic needed functionalities
