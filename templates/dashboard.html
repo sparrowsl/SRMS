@@ -33,36 +33,14 @@
       </thead>
 
       <tbody>
+        {% for account, password in accounts.items() %}
         <tr>
-          <td>Facebook</td>
-          <td>0123456789</td>
+          <td>{{ account }}</td>
+          <td>{{ password }}</td>
           <td><a href="#" class="editBtn">Edit</a></td>
           <td><a href="#" class="deleteBtn">Delete</a></td>
         </tr>
-        <tr>
-          <td>Email</td>
-          <td>0238494000</td>
-          <td><a href="#" class="editBtn">Edit</a></td>
-          <td><a href="#" class="deleteBtn">Delete</a></td>
-        </tr>
-        <tr>
-          <td>Reddit</td>
-          <td>02380867</td>
-          <td><a href="#" class="editBtn">Edit</a></td>
-          <td><a href="#" class="deleteBtn">Delete</a></td>
-        </tr>
-        <tr>
-          <td>Slack</td>
-          <td>023846345</td>
-          <td><a href="#" class="editBtn">Edit</a></td>
-          <td><a href="#" class="deleteBtn">Delete</a></td>
-        </tr>
-        <tr>
-          <td>Github</td>
-          <td>023892038403</td>
-          <td><a href="#" class="editBtn">Edit</a></td>
-          <td><a href="#" class="deleteBtn">Delete</a></td>
-        </tr>
+        {% endfor %}
       </tbody>
     </table>
   </main>
