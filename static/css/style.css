@@ -1,72 +1,82 @@
 *, *::after, *::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html{ font-size: 62.5%; }
 body{ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+main{ width: 95%; }
 
 form{
-    width: 90%;
-    margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 }
 
 form label{
-    display: block;
-    font-weight: lighter;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: grey;
-    font-size: 1.6rem;
+  display: block;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: grey;
+  font-size: 1.6rem;
 }
 
 form div{ margin: 3em 0; }
 input[type="email"],
 input[type="text"],
 input[type="password"]{
-    width: 90%;
-    padding: .65em .4em;
-    border: none;
-    border-bottom: 1px solid silver;
-    outline: 0;
-    font-size: 1.75rem;
+  width: 90%;
+  padding: .65em .4em;
+  border: none;
+  border-bottom: 1px solid silver;
+  outline: 0;
+  font-size: 1.75rem;
 }
 ::placeholder{ color: silver; }
 
 button{
-    display: inline;
-    padding: .7em 2.2em;
-    border: none;
-    border-radius: 2px;
-    font-weight: bold;
-    font-size: 1.6rem;
-    background-color: #3490de;
-    color: white;
-    cursor: pointer;
+  display: inline;
+  padding: .7em 2.2em;
+  border: none;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 1.6rem;
+  background-color: #3490de;
+  color: white;
+  cursor: pointer;
 }
 
 footer{
-    text-align: center;
-    margin-top: 1.3em;
-    font-size: 1.5rem;
-    color: grey;
+  text-align: center;
+  margin-top: 1.3em;
+  font-size: 1.5rem;
+  color: grey;
 }
 
 
-@media screen and (min-width: 400px){
-    form{ width: 80%; }
+@media (min-width: 400px){
+  form{ width: 80%; }
 }
 
-@media screen and (min-width: 550px){
-    form{ width: 70%; }
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  form{ width: 70%; }
 }
 
-@media screen and (min-width: 750px){
-    form{ width: 50%; }
-    button:hover{ background-color: #3d84a8; }
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  form{ width: 50%; }
+  button:hover{ background-color: #3d84a8; }
 }
 
-@media screen and (min-width: 1000px){
-    form{ width: 40%; }
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  form{ width: 40%; }
 }
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}

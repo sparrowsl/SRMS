@@ -1,37 +1,37 @@
 .home{
-    padding: .2em .5em;
-    font-size: 1.6rem;
-    font-family: Verdana, Geneva, sans-serif;
-    margin-top: 5%;
+  padding: .2em .5em;
+  font-size: 1.6rem;
+  font-family: Verdana, Geneva, sans-serif;
+  margin-top: 5%;
 }
 
 .home a{ color: #3f72af; }
 form{ padding: .7em; }
 form h3{
-    font-size: 3rem;
-    text-align: center;
-    color: #393e46;
+  font-size: 3rem;
+  text-align: center;
+  color: #393e46;
 }
 
 @media screen and (min-width: 400px){
-    form{ width: 80%; }
+  form{ width: 80%; }
 }
 
 @media screen and (min-width: 550px){
-    .home{
-        margin-left: 9%;
-        font-size: 1.7rem;
-    }
-    form{ width: 70%; }
+  .home{
+      margin-left: 9%;
+      font-size: 1.7rem;
+  }
+  form{ width: 70%; }
 }
 
 @media screen and (min-width: 750px){
-    .home{ margin-left: 20%; }
-    .home a:hover{ color: blue; }
-    form{ width: 50%; }
-    button:hover{ background-color: #3d84a8; }
+  .home{ margin-left: 20%; }
+  .home a:hover{ color: blue; }
+  form{ width: 50%; }
+  button:hover{ background-color: #3d84a8; }
 }
 
 @media screen and (min-width: 1000px){
-    form{ width: 40%; }
+  form{ width: 40%; }
 }

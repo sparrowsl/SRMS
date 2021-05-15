@@ -1,52 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Password Manager</title>
+{% extends "layout.html" %}
+{% block links %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock links %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-</head>
+{% block main %}
+  <section class="welcome">
+    <h2>WELCOME TO</h2>
+    <h1>Password Manager</h1>
+    <hr>
+    <p>Login to Access Dashboard</p>
+  </section>
 
-<body>
-    <main>
-        <section class="welcome">
-            <h2>WELCOME TO</h2>
-            <h1>Password Manager</h1>
-            <hr>
-            <p>Login to Access Dashboard</p>
-        </section>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages%}
+        <div>{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
 
-        <form action="#" method="POST">
-            <div>
-                <label for="email">EMAIL</label>
-                <input type="email" name="email" placeholder="johndoe@email.com" id="email" autofocus>
-            </div>
+  <form action="validate">
+    <div>
+      <label for="email">EMAIL</label>
+      <input type="email" name="email" placeholder="johndoe@email.com" id="email" autofocus required>
+    </div>
 
-            <div>
-                <label for="password">PASSWORD</label>
-                <input type="password" name="password" placeholder="********" id="password" autofocus>
-            </div>
+    <div>
+      <label for="password">PASSWORD</label>
+      <input type="password" name="password" placeholder="********" id="password" autofocus required>
+    </div>
 
-            <div>
-                <input type="checkbox" name="rememberMe" id="rememberMe">
-                <label for="rememberMe" class="remember-me">Remember Me</label>
-            </div>
+    <div>
+      <input type="checkbox" name="rememberMe" id="rememberMe">
+      <label for="rememberMe" class="remember-me">Remember Me</label>
+    </div>
 
-            <div class="buttons">
-                <button type="button" id="loginBtn">Login</button>
-                <a href="signup.html">Create Account</a>
-            </div>
+    <div class="buttons">
+      <button type="submit" id="loginBtn">Login</button>
+      <a href="/signup">Create Account</a>
+    </div>
 
-            <p><a href="#">Forgot your password?</a> Get Help <a href="#">Signing In</a></p>
-        </form>
-    </main>
-
-    <footer>
-        <small id="copyright">Copyright&copy; 2021</small>
-    </footer>
- <script src="js/main.js"></script>
-</body>
-</html>
+    <p><a href="#">Forgot your password?</a> Get help or <a href="/signup">Sign Up</a></p>
+  </form>
+{% endblock main %}

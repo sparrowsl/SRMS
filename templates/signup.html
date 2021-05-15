@@ -1,43 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up | Password Manager</title>
+{% extends "layout.html" %}
+{% block links %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+{% endblock links %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
-</head>
+{% block main %}
+  <div class="home">
+      <a href="/" class="btn btn-info">Home</a>
+  </div>
 
-<body>
-    <main>
-        <div class="home">
-            <a href="index.html" class="btn btn-info">Home</a>
-        </div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages%}
+        <div>{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
 
-        <form action="#" method="POST">
-            <h3>Sign Up</h3>
+  <form action="/adduser">
+    <h3>Sign Up</h3>
 
-            <div>
-                <label for="username">Username</label>
-                <input type="text" name="username" placeholder="Enter Name" id="username" autofocus>
-            </div>
-            <div>
-                <label for="email">Email</label>
-                <input type="email" name="email" placeholder="Enter Email" id="email" autofocus>
-            </div>
-            <div>
-                <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Enter Password" id="password" autofocus>
-            </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" name="email" placeholder="johndoe@mail.com" id="email" autofocus required>
+    </div>
 
-            <button type="button">Register</button>
-        </form>
-    </main>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" placeholder="********" id="password" autofocus required>
+    </div>
 
-    <footer>
-        <p class="copyright"><small>Copyright&copy; 2021</small></p>
-    </footer>
-</body>
-</html>
+    <button type="submit">Register</button>
+  </form>
+{% endblock main %}
