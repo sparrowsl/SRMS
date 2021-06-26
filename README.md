@@ -1,4 +1,4 @@
-# Password Manager
+# Password Manager (Spind *(German for Locker)*)
 
 A simple web based password manager for all your accounts.
 
