@@ -49,6 +49,9 @@
     }
   }
   @media (min-width: 576px){
+    .intro h4{
+      font-size: 1.7rem;
+    }
     section{
       gap: 1em;
       flex-direction: row;
@@ -57,5 +60,11 @@
     }
     section > div{ width: 100%; }
     .intro{ text-align: left; }
+  }
+  @media (min-width: 768px){
+    .intro p{
+      margin: 0;
+      max-width: 50ch;
+    }
   }
 </style>

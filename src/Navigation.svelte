@@ -1,27 +1,32 @@
 <script>
-  let loggedIn = false;
+  export let isLoggedIn = true;
 </script>
 
 <nav>
-  <div class="logo">Hashup</div>
+  <div class="logo">Spind</div>
   <ul>
     <li><a href="#/">Home</a></li>
-    {#if loggedIn}
-    <li><a href="#/settings">Settings</a></li>
-    <li><a href="#/logout">Logout</a></li>
+    {#if isLoggedIn}
+      <li><a href="#/dashboard">Dashboard</a></li>
+      <li><a href="#/settings">Settings</a></li>
+      <!-- logout goes inside settings -->
+      <li><a href="#/logout" class="logout">&#9755;</a></li>
     {:else}
-    <li><a href="#/login">Login</a></li>
-    <li><a href="#/signup">Signup</a></li>
+      <li><a href="#/login">Login</a></li>
+      <li><a href="#/signup">Signup</a></li>
     {/if}
   </ul>
 </nav>
 
 <style>
   nav{
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
     padding: 1.5em 1em;
     border-bottom: 1px solid #d3d3d3;
+    background-color: #fff;
     height: 10vh;
   }
   .logo{
@@ -31,11 +36,17 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
   }
+  .logout{
+    color: red;
+    font-size: 2.7rem;
+    font-weight: bold;
+  }
   nav ul{
     list-style-type: none;
     margin-left: auto;
     display: flex;
-    gap: 1.25em;
+    align-items: center;
+    gap: 1em;
     font-size: 1.7rem;
   }
   a{
@@ -56,4 +67,5 @@
     .logo{ margin-left: 10%; }
     nav ul{ margin-right: 10%; }
   }
+  @media (min-width: 992px){}
 </style>

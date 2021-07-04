@@ -1,7 +1,7 @@
 <script></script>
 
 <footer>
-  <p>Copyright &copy; 2021 - Hashup</p>
+  <p>Copyright &copy; 2021 - Spind</p>
 </footer>
 
 <style>

@@ -70,7 +70,19 @@
   }
   button:focus, input:focus{ border-color: #666; }
 
+  @media (min-width: 400px){
+    form{ max-width: 75%; }
+  }
+  @media (min-width: 576px){
+    form{ max-width: 70%; }
+  }
   @media (min-width: 768px){
+    form{ max-width: 60%; }
     button:hover{ background-color: #2169a0; }
+  }
+  @media (min-width: 992px){
+    form{ max-width: 50%; }
+  }
+  @media (min-width: 768px){
   }
 </style>
