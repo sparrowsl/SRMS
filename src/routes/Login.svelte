@@ -1,19 +1,26 @@
 <script>
-  const checkDetails = () => console.log("Checking Details...");
+  import { createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
+
+  const user = {
+    email: "",
+    password: "",
+  }
+  const login = () => dispatch("login", user);
 </script>
 
 <section>
   <h2>Login</h2>
 
-  <form on:submit|preventDefault={checkDetails}>
+  <form on:submit|preventDefault={login}>
     <div>
-      <label for="email">Email</label>
-      <input type="email" name="email" placeholder="johndoe@mail.com" id="email" required>
+      <label for="">Email</label>
+      <input type="email" name="email" placeholder="johndoe@mail.com" required bind:value={user.email}>
     </div>
 
     <div>
-      <label for="password">Password</label>
-      <input type="password" name="password" placeholder="********" id="password" required>
+      <label for="">Password</label>
+      <input type="password" name="password" placeholder="********" required bind:value={user.password}>
     </div>
 
     <div>

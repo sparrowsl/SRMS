@@ -14,5 +14,6 @@
     color: #888;
     font-style: italic;
     font-size: 1.2rem;
+    font-weight: bold;
   }
 </style>
