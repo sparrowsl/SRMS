@@ -1,0 +1,37 @@
+{% extends "accounts/base.html" %}
+
+{% block main %}
+  <section class="uk-container uk-container-small">
+    <form action="{% url 'accounts:edit_account' account.id %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+
+      <div class="uk-margin">
+        <label><input class="uk-checkbox" type="checkbox"> <span>show</span> password</label>
+      </div>
+
+      <button class="uk-button uk-button-primary" name="submit">Update</button>
+    </form>
+  </section>
+{% endblock main %}
+
+{% block custom_script %}
+  <script type="text/javascript">
+    const hidePassword = document.querySelector(".uk-checkbox");
+    const showLabel = document.querySelector("label > span");
+
+    hidePassword.addEventListener("change", () => {
+      // Change the input field if checkbox is checked
+      if (hidePassword.checked === true){
+        // Display the password
+        document.getElementById('passField').type = 'text';
+        showLabel.textContent = "hide"
+      }else{
+        // Hide the password
+        document.getElementById('passField').type = 'password';
+        showLabel.textContent = "show"
+      }
+    });
+  </script>
+{% endblock custom_script %}
+

@@ -5,37 +5,46 @@ A simple web based password manager for all your accounts.
 ## Features
 
 - Stores password safely
-
-## Features to be added
-
-- Contains basic functionalities(ie: Edit, Delete)
-- Realtime updates
-- Generate passwords for you (optional)
 - Hash passwords
 - Encryption functionality
 
 
+## Features to be added
+
+- Contains basic functionalities:
+  - Create
+  - Update
+  - Edit
+  - Delete
+- Optionally generate passwords
+
+
 ## Get started
 
-Install the dependencies...
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
-
+#### Cloning the project
 ```bash
-git clone https://github.com/benjithorpe/hashup.git
+git clone https://github.com/benjithorpe/spind.git
 
-cd hashup
-
-npm install
-
-npm run dev
+cd spind
 ```
 
-Navigate to [localhost:5000](http://localhost:5000).
-
-## Building and running in production mode
-
-To create an optimised version of the app:
-
-```bash
-npm run build
+#### Create a virtual environment
+```python
+python -m venv venv
 ```
+
+#### Activate virtual environment
+```bash
+source venv/bin/activate
+```
+
+#### Install the dependencies...
+```python
+pip install -r requirements.txt
+```
+
+Navigate to [localhost:8000](http://localhost:8000)
+
+## Technologies Used
+- Python (Django Framework)
+- Heroku (for Deployment)
