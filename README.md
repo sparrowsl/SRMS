@@ -10,13 +10,13 @@ A simple web based password manager for all your accounts.
   - Create
   - Update
   - Edit
+  - Delete
 
 
 ## Features to be added
 
 - Hash passwords
 - Encryption functionality
-- Delete
 - Optionally generate passwords
 
 
@@ -42,6 +42,14 @@ source venv/bin/activate
 #### Install the dependencies...
 ```python
 pip install -r requirements.txt
+```
+
+#### Creating the database and tables
+```python
+python manage.py makemigrations
+
+# create the tables
+python manage.py migrate
 ```
 
 Navigate to [localhost:8000](http://localhost:8000)
