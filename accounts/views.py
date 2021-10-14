@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 
 from .models import Account
 from .forms import EditAccountForm, AddAccountForm
@@ -48,6 +48,6 @@ def add_account(request):
 
 def delete_account(request, account_id):
     # Get the account from the database and delete it
-    Account.objects.get_object_or_404(id=account_id).delete()
+    Account.objects.get(id=account_id).delete()
     # Return back to dashboard
     return redirect("accounts:dashboard")

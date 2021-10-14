@@ -6,36 +6,41 @@
   </div>
 
   <section class="uk-overflow-auto uk-height-large uk-container-small">
-    <table class="uk-table uk-table-small uk-table-divider uk-table-justify uk-table-middle">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Password</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        {% for account in accounts %}
+    <!-- Check if any account is in the database -->
+    {% if accounts %}
+      <table class="uk-table uk-table-small uk-table-divider uk-table-justify uk-table-middle">
+        <thead>
           <tr>
-            <td>{{ account.name }}</td>
-            <td class="uk-text-truncate">**************************************</td>
-            <td class="uk-text-center">
-              <a href="{% url 'accounts:edit_account' account.id %}"
-                 class="uk-button uk-button-small uk-button-primary"
-                 uk-icon="pencil"></a>
-              <br> <small class="uk-text-meta">Edit</small>
-            </td>
-            <td class="uk-text-center">
-              <a href="{% url 'accounts:delete_account' account.id %}"
-                 class="uk-button uk-button-small uk-button-danger"
-                 uk-icon="trash"></a>
-              <br> <small class="uk-text-meta">Delete</small>
-            </td>
+            <th>Name</th>
+            <th>Password</th>
+            <th></th>
+            <th></th>
           </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+        </thead>
+
+        <tbody>
+          {% for account in accounts %}
+            <tr>
+              <td>{{ account.name }}</td>
+              <td class="uk-text-truncate">**************************************</td>
+              <td class="uk-text-center">
+                <a href="{% url 'accounts:edit_account' account.id %}"
+                   class="uk-button uk-button-small uk-button-primary"
+                   uk-icon="pencil"></a>
+                <br><small class="uk-text-meta">Edit</small>
+              </td>
+              <td class="uk-text-center">
+                <a href="{% url 'accounts:delete_account' account.id %}"
+                   class="uk-button uk-button-small uk-button-danger"
+                   uk-icon="trash"></a>
+                <br><small class="uk-text-meta">Delete</small>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No account has been added yet!!</p>
+    {% endif %}
   </section>
 {% endblock main %}
