@@ -2,14 +2,13 @@
 
 {% block main %}
   <div class="uk-text-center uk-margin-bottom uk-container-small">
-    <a href="#" class="uk-button uk-button-primary">Add Account</a>
+    <a href="{% url 'accounts:add_account' %}" class="uk-button uk-button-primary">Add Account</a>
   </div>
 
   <section class="uk-overflow-auto uk-height-large uk-container-small">
     <table class="uk-table uk-table-small uk-table-divider uk-table-justify uk-table-middle">
       <thead>
         <tr>
-          <th>ID</th>
           <th>Name</th>
           <th>Password</th>
           <th></th>
@@ -20,7 +19,6 @@
       <tbody>
         {% for account in accounts %}
           <tr>
-            <td>{{ account.id }}</td>
             <td>{{ account.name }}</td>
             <td class="uk-text-truncate">**************************************</td>
             <td class="uk-text-center">
@@ -30,7 +28,7 @@
               <br> <small class="uk-text-meta">Edit</small>
             </td>
             <td class="uk-text-center">
-              <a href="#"
+              <a href="{% url 'accounts:delete_account' account.id %}"
                  class="uk-button uk-button-small uk-button-danger"
                  uk-icon="trash"></a>
               <br> <small class="uk-text-meta">Delete</small>

@@ -3,7 +3,7 @@
 
 {% block main %}
   <section class="uk-container uk-container-small">
-    <form action="{% url 'accounts:edit_account' account.id %}" method="post">
+    <form action="{% url 'accounts:add_account' %}" method="post">
       {% csrf_token %}
       {{ form.as_p }}
 
@@ -14,7 +14,7 @@
           </label>
       </div>
 
-      <button class="uk-button uk-button-primary uk-margin-right" name="submit">Update</button>
+      <button class="uk-button uk-button-primary uk-margin-right" name="submit">Add Account</button>
       <a href="{% url 'accounts:dashboard' %}" class="uk-button uk-button-danger">Cancel</a>
     </form>
   </section>

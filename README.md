@@ -5,17 +5,18 @@ A simple web based password manager for all your accounts.
 ## Features
 
 - Stores password safely
-- Hash passwords
-- Encryption functionality
-
-
-## Features to be added
-
+- toggle password visibility
 - Contains basic functionalities:
   - Create
   - Update
   - Edit
-  - Delete
+
+
+## Features to be added
+
+- Hash passwords
+- Encryption functionality
+- Delete
 - Optionally generate passwords
 
 
@@ -48,3 +49,4 @@ Navigate to [localhost:8000](http://localhost:8000)
 ## Technologies Used
 - Python (Django Framework)
 - Heroku (for Deployment)
+- UiKit (for Styling)
