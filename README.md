@@ -1,6 +1,12 @@
 # Password Manager (Spind *(German for Locker)*)
+---
+<!-- link to live project -->
 
-A simple web based password manager for all your accounts.
+
+## Summary
+
+A simple web app that stores all your accounts and their passwords in one place securely and safely.
+
 
 ## Features
 
@@ -13,48 +19,49 @@ A simple web based password manager for all your accounts.
   - Delete
 
 
-## Features to be added
+### Features to be added
 
 - Hash passwords
 - Encryption functionality
 - Optionally generate passwords
 
 
-## Get started
+## Run locally
 
-#### Cloning the project
-```bash
-git clone https://github.com/benjithorpe/spind.git
 
-cd spind
-```
+#### clone/get the repo
+* Run `git clone https://github.com/benjithorpe/spind.git`
 
-#### Create a virtual environment
-```python
-python -m venv venv
-```
+#### go inside the folder
+* Run `cd spind/`
 
-#### Activate virtual environment
-```bash
-source venv/bin/activate
-```
+#### create a virtual environment
+Run `python -m venv venv`
 
-#### Install the dependencies...
-```python
-pip install -r requirements.txt
-```
+> the second "venv" is the name of your virtual environment.
 
-#### Creating the database and tables
-```python
-python manage.py makemigrations
+#### activate virtual environment
+* Run `source venv/bin/activate`
 
-# create the tables
-python manage.py migrate
-```
+> On windows use `spind\Scripts\activate`
 
-Navigate to [localhost:8000](http://localhost:8000)
+#### install the dependencies...
+* Run `pip install -r requirements.txt`
 
-## Technologies Used
-- Python (Django Framework)
-- Heroku (for Deployment)
-- UiKit (for Styling)
+#### creating the database
+* Run `python manage.py makemigrations`
+
+#### create the models/tables
+* Run `python manage.py migrate`
+
+#### run the server
+* Run `python manage.py runserver`
+
+---
+Navigate to [localhost:8000](http://localhost:8000) and the project should be live
+
+
+## Technologies Used/Stack
+- Django
+- Heroku
+- UiKit
