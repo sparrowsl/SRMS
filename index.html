@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spind - Simple Password Manager</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+  <main class="main py-5 px-3">
+    <!-- Project summary -->
+    <div class="mb-5 has-text-centered">
+      <h1 class="title is-size-4 is-size-3-tablet">Spind (Password Manager)</h1>
+      <p class="subtitle is-size-6 is-size-5-tablet is-italic">
+        Manage your passwords for different accounts locally on your browser
+      </p>
+    </div>
+
+    <section class="accounts-section container p-4">
+      <div class="search-bar is-flex is-justify-content-space-between is-align-items-center mb-4">
+        <div class="">
+          <input type="search" class="input is-small" placeholder="Search for an account" disabled data-search-bar>
+          <p class="is-size-7 is-italic">search option is under construction</p>
+        </div>
+        <!-- Add a new account section -->
+        <div class="">
+          <button class="button is-primary is-small" data-add-account-btn>Add Account</button>
+        </div>
+      </div>
+      <hr class="my-1 has-background-black">
+
+      <section class="section is-relative columns is-multiline px-0 py-3" data-accounts>
+      </section>
+    </section>
+
+  </main>
+
+  <!-- Modal for adding a new account -->
+  <section class="modal is-activ px-1" data-new-account-modal>
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head p-3">
+        <p class="modal-card-title is-size-5">Add New Account</p>
+        <button class="delete is-medium has-background-danger" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <!-- Content ... -->
+        <div class="notification has-background-white px-0 py-2">
+          <!-- Account name -->
+          <div class="mb-3">
+            <label for="name">Name:</label>
+            <input type="text" name="name" placeholder="account name (eg: Facebook)" class="input">
+          </div>
+          <!-- Account password -->
+          <div class="">
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder="password (eg: strongpassword)" class="input">
+          </div>
+        </div>
+      </section>
+      <footer class="modal-card-foot p-2 is-flex is-justify-content-space-around">
+        <button class="cancel-modal button is-small">Cancel</button>
+        <button type="submit" class="add-account-btn button is-success is-outlined is-small">Add account</button>
+      </footer>
+    </div>
+  </section>
+  <!-- End new account modal -->
+
+  <template data-account-template>
+    <div class="added column p-2 is-6-tablet is-4-desktop">
+      <div class="notification box has-background-info-light p-2">
+        <div class="is-flex is-justify-content-space-between is-align-items-center">
+          <strong class="account-name m-0 is-size-5-tablet has-text-link-dark">account</strong>
+          <button class="delete has-background-danger ml-2"></button>
+        </div>
+      </div>
+    </div>
+  </template>
+</body>
+</html>
