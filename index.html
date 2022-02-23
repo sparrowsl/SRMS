@@ -41,7 +41,7 @@
   </main>
 
   <!-- Modal for adding a new account -->
-  <section class="modal is-activ px-1" data-new-account-modal>
+  <section class="modal is-active px-1" data-new-account-modal>
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head p-3">
@@ -49,24 +49,29 @@
         <button class="delete is-medium has-background-danger" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
-        <!-- Content ... -->
         <div class="notification has-background-white px-0 py-2">
-          <!-- Account name -->
-          <div class="mb-3">
-            <label for="name">Name:</label>
-            <input type="text" name="name" placeholder="account name (eg: Facebook)" class="input">
-          </div>
-          <!-- Account password -->
-          <div class="">
-            <label for="password">Password:</label>
-            <input type="password" name="password" placeholder="password (eg: strongpassword)" class="input">
-          </div>
+          <form action="">
+            <!-- Account name -->
+            <div class="mb-3">
+              <label for="name">Name:</label>
+              <input type="text" name="name" placeholder="account name (eg: Facebook)" class="input">
+              <p class="nameError is-size-7 has-text-danger is-italic"></p>
+            </div>
+            <!-- Account password -->
+            <div class="">
+              <label for="password">Password:</label>
+              <input type="password" name="password" placeholder="password (eg: strongpassword)" class="input">
+              <p class="passwordError is-size-7 has-text-danger is-italic"></p>
+            </div>
+
+            <div class="mt-4 has-text-right">
+              <button type="submit" class="add-account-btn button is-success is-outlined is-small">
+                Add account
+              </button>
+            </div>
+          </form>
         </div>
       </section>
-      <footer class="modal-card-foot p-2 is-flex is-justify-content-space-around">
-        <button class="cancel-modal button is-small">Cancel</button>
-        <button type="submit" class="add-account-btn button is-success is-outlined is-small">Add account</button>
-      </footer>
     </div>
   </section>
   <!-- End new account modal -->

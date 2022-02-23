@@ -14,36 +14,60 @@ const openModal = (modalName) => modalName.classList.add("is-active");
 /* Script for the "add new account" modal */
 
 const addNewAccountModal = document.querySelector("[data-new-account-modal]");
-const cancelAddNewAccountModalBtn = addNewAccountModal.querySelector("button.cancel-modal");
+// const cancelAddNewAccountModalBtn = addNewAccountModal.querySelector("button.cancel-modal");
 const addNewAccountBtn = document.querySelector("[data-add-account-btn]");
 const closeNewAccountModal = addNewAccountModal.querySelector("[aria-label='close']");
 
-cancelAddNewAccountModalBtn.addEventListener("click", () => closeModal(addNewAccountModal));
+// cancelAddNewAccountModalBtn.addEventListener("click", () => closeModal(addNewAccountModal));
 addNewAccountBtn.addEventListener("click", () => openModal(addNewAccountModal));
 closeNewAccountModal.addEventListener("click", () => closeModal(addNewAccountModal));
 
 
 /* Logic for adding new account to localStorage */
 const saveNewAccountBtn = addNewAccountModal.querySelector(".add-account-btn");
-saveNewAccountBtn.addEventListener("click", () => {
+saveNewAccountBtn.addEventListener("click", (e) => {
+  e.preventDefault();
   const newAccountName = addNewAccountModal.querySelector("[name='name']");
   const newAccountPassword = addNewAccountModal.querySelector("[name='password']");
+  if (isValidNewAccount(newAccountName, newAccountPassword) === false) return;
 
-  // Check if any data is available else do nothing
-  if (!newAccountName.value && !newAccountPassword.value) return;
 
-  const newAccount = { id: uniqueID, name: newAccountName.value, password: newAccountPassword.value };
+  console.log(newAccountName.value, newAccountPassword.value);
 
-  accountsAndPassword.push(newAccount);
-  buildAccountCard(newAccount);
-  console.log(accountsAndPassword);
+  // const newAccount = { id: uniqueID, name: newAccountName.value, password: newAccountPassword.value };
 
-  // close the modal after value is submitted
-  closeModal(addNewAccountModal);
+  // accountsAndPassword.push(newAccount);
+  // buildAccountCard(newAccount);
+  // console.log(accountsAndPassword);
+
+  // // close the modal after value is submitted
+  // closeModal(addNewAccountModal);
   // Clear the input fields
   newAccountName.value = "";
   newAccountPassword.value = "";
 });
+
+function isValidNewAccount(name, password) {
+  let isValidName = false;
+  let isValidPassword = false;
+
+  // Check if any data is available else do nothing
+  if (name.value.trim().length < 1) {
+    addNewAccountModal.querySelector("p.nameError").textContent = "please enter an account name";
+  } else {
+    isValidName = true;
+    addNewAccountModal.querySelector("p.nameError").textContent = "";
+  }
+
+  if (password.value.trim().length < 1) {
+    addNewAccountModal.querySelector("p.passwordError").textContent = "please enter a password!";
+  } else {
+    isValidPassword = true;
+    addNewAccountModal.querySelector("p.passwordError").textContent = "";
+  }
+
+  return isValidName && isValidPassword;
+}
 
 
 /* Logic for displaying and deleting the accounts on the UI */
@@ -60,8 +84,7 @@ function buildAccountCard(account) {
   cardDeleteBtn.addEventListener("click", () => {
     cardParentElement.classList.remove("added");
     cardParentElement.classList.add("deleted");
-    setTimeout(() => cardParentElement.remove(), 990);
-    cardParentElement.remove()
+    setTimeout(() => cardParentElement.remove(), 650);
   });
 
   allAccounts.append(accountCard);
