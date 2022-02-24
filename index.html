@@ -32,7 +32,7 @@
           <button class="button is-primary is-small" data-add-account-btn>Add Account</button>
         </div>
       </div>
-      <hr class="my-1 has-background-black">
+      <!-- <hr class="my-1 has-background-black"> -->
 
       <section class="section is-relative columns is-multiline px-0 py-3" data-accounts>
       </section>
@@ -41,7 +41,7 @@
   </main>
 
   <!-- Modal for adding a new account -->
-  <section class="modal is-active px-1" data-new-account-modal>
+  <section class="modal px-1" data-new-account-modal>
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head p-3">
@@ -54,13 +54,13 @@
             <!-- Account name -->
             <div class="mb-3">
               <label for="name">Name:</label>
-              <input type="text" name="name" placeholder="account name (eg: Facebook)" class="input">
+              <input type="text" name="name" placeholder="(eg: Facebook)" class="input">
               <p class="nameError is-size-7 has-text-danger is-italic"></p>
             </div>
             <!-- Account password -->
             <div class="">
               <label for="password">Password:</label>
-              <input type="password" name="password" placeholder="password (eg: strongpassword)" class="input">
+              <input type="password" name="password" placeholder="(eg: strongpassword)" class="input">
               <p class="passwordError is-size-7 has-text-danger is-italic"></p>
             </div>
 
@@ -75,6 +75,32 @@
     </div>
   </section>
   <!-- End new account modal -->
+
+  <!-- Modal for displaying account detail -->
+  <section class="modal px-1" data-account-detail-modal>
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head p-3">
+        <p class="modal-card-title is-size-5">Account Detail</p>
+        <button class="delete is-medium has-background-danger" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="notification has-background-white px-0 py-2">
+          <!-- Account name -->
+          <div class="account-detail-name mb-4">
+            <label for="name" class="is-italic">Name:</label>
+            <p class="has-text-weight-bold">Facebook</p>
+          </div>
+          <!-- Account password -->
+          <div class="account-detail-password">
+            <label for="password" class="is-italic">Password:</label>
+            <p class="has-text-weight-bold">*************</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  <!-- End display account detail -->
 
   <template data-account-template>
     <div class="added column p-2 is-6-tablet is-4-desktop">

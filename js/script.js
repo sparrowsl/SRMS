@@ -1,10 +1,6 @@
 "use strict";
 
-let accountsAndPassword = [
-  { id: 0, name: "GitHub", password: "githubisboss23" },
-  { id: 1, name: "Facebook", password: "fbismetanow" },
-  { id: 2, name: "LinkedIn", password: "MSownsme" },
-];
+let accountsAndPassword = [];
 let uniqueID = accountsAndPassword.length;
 
 
@@ -12,15 +8,15 @@ const closeModal = (modalName) => modalName.classList.remove("is-active");
 const openModal = (modalName) => modalName.classList.add("is-active");
 
 /* Script for the "add new account" modal */
-
 const addNewAccountModal = document.querySelector("[data-new-account-modal]");
-// const cancelAddNewAccountModalBtn = addNewAccountModal.querySelector("button.cancel-modal");
+const accountDetailModal = document.querySelector("[data-account-detail-modal]");
 const addNewAccountBtn = document.querySelector("[data-add-account-btn]");
 const closeNewAccountModal = addNewAccountModal.querySelector("[aria-label='close']");
+const closeAccountDetailModal = accountDetailModal.querySelector("[aria-label='close']");
 
-// cancelAddNewAccountModalBtn.addEventListener("click", () => closeModal(addNewAccountModal));
 addNewAccountBtn.addEventListener("click", () => openModal(addNewAccountModal));
 closeNewAccountModal.addEventListener("click", () => closeModal(addNewAccountModal));
+closeAccountDetailModal.addEventListener("click", () => closeModal(accountDetailModal));
 
 
 /* Logic for adding new account to localStorage */
@@ -29,19 +25,15 @@ saveNewAccountBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const newAccountName = addNewAccountModal.querySelector("[name='name']");
   const newAccountPassword = addNewAccountModal.querySelector("[name='password']");
+
   if (isValidNewAccount(newAccountName, newAccountPassword) === false) return;
+  const newAccount = { id: uniqueID, name: newAccountName.value, password: newAccountPassword.value };
 
-
-  console.log(newAccountName.value, newAccountPassword.value);
-
-  // const newAccount = { id: uniqueID, name: newAccountName.value, password: newAccountPassword.value };
-
-  // accountsAndPassword.push(newAccount);
-  // buildAccountCard(newAccount);
-  // console.log(accountsAndPassword);
+  accountsAndPassword.push(newAccount);
+  buildAccountCard(newAccount);
 
   // // close the modal after value is submitted
-  // closeModal(addNewAccountModal);
+  closeModal(addNewAccountModal);
   // Clear the input fields
   newAccountName.value = "";
   newAccountPassword.value = "";
@@ -87,10 +79,28 @@ function buildAccountCard(account) {
     setTimeout(() => cardParentElement.remove(), 650);
   });
 
+  // Open modal to display account details on click
+  cardParentElement.querySelector("strong").addEventListener("click", () => {
+    openModal(accountDetailModal);
+    buildAccountDetail(account);
+  });
+
   allAccounts.append(accountCard);
 }
 
-accountsAndPassword.forEach((account) => buildAccountCard(account));
+function buildAccountDetail(account) {
+  const accountName = accountDetailModal.querySelector(".account-detail-name p");
+  const accountPassword = accountDetailModal.querySelector(".account-detail-password p");
+
+  // Filter the account list to find the correct account.
+  const filtered = accountsAndPassword.filter(acc => acc.id === account.id);
+
+  accountName.textContent = filtered[0].name;
+  accountPassword.textContent = filtered[0].password;
+}
+
+
+accountsAndPassword.forEach(account => buildAccountCard(account));
 
 /*
 const addItemBtn = document.querySelector("[data-add-item-button]");

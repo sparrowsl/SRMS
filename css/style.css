@@ -1,5 +1,4 @@
 *{
-  box-sizing: border-box;
   font-family: 'Quicksand', sans-serif;
 }
 .main{
@@ -10,6 +9,10 @@
   background-color: rgba(220, 234, 248, 0.925);
   border-radius: 5px;
   box-shadow: 4px 5px 7px rgba(131, 141, 153, 0.925);
+}
+[data-accounts]{
+  max-height: 70vh;
+  overflow-y: scroll;
 }
 /* Styles for adding and removing items */
 .deleted{
@@ -33,14 +36,13 @@
   100%{
     position: absolute;
     z-index: -1;
-    width: 100%;
-    transform: translate(-105%);
+    transform: translate(-100%);
     opacity: 0;
   }
 }
 @keyframes addItem {
   from{
-    transform: translateY(105%);
+    transform: translateY(100%);
     opacity: 0;
   }
   to{
@@ -61,4 +63,11 @@
   .accounts-section{
     width: 70%;
   }
+  div.added:hover{
+    cursor: pointer;
+  }
+  div.added:hover strong{
+    color: black !important;
+  }
+
 }
