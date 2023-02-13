@@ -1,4 +1,4 @@
-<nav class="flex justify-between items-center min-h-[10vh] sticky top-0 bg-white">
+<nav class="sticky top-0 flex min-h-[10vh] items-center justify-between bg-white px-5">
 	<p>SRMS | Admin</p>
 
 	<a href="/dashboard">logout</a>
