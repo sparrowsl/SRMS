@@ -7,11 +7,11 @@
 	let validating = false;
 </script>
 
-<main class="grid h-screen place-content-center bg-gray-100">
+<main class="h-screen bg-gray-100 grid place-content-center">
 	<form
 		action=""
 		method="POST"
-		class="rounded bg-white p-5 shadow-lg"
+		class="bg-white rounded shadow-lg p-5"
 		use:enhance={({ form }) => {
 			validating = true;
 			return async ({ result, update }) => {
@@ -22,12 +22,12 @@
 			};
 		}}
 	>
-		<legend class="text-center text-xl font-bold">Admin Login</legend>
+		<legend class="font-bold text-center text-xl">Admin Login</legend>
 
-		<fieldset class="flex flex-col gap-5 p-10">
+		<fieldset class="flex flex-col p-10 gap-5">
 			<div>
-				<label for="">Username</label>
-				<Input placeholder="john" name="username" />
+				<label for="">Email</label>
+				<Input type="email" placeholder="john@gmail.com" name="email" />
 			</div>
 
 			<div>
@@ -40,7 +40,7 @@
 			</Button>
 
 			{#if form?.error}
-				<p class="text-sm text-red-500">{form?.error}</p>
+				<p class="text-xs text-red-500">{form?.error}</p>
 			{/if}
 		</fieldset>
 	</form>
