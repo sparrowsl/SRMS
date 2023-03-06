@@ -1,6 +1,15 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
+import UnoCSS from "unocss/vite";
+import { extractorSvelte } from '@unocss/core';
 
-export default defineConfig({
-	plugins: [sveltekit()]
-});
+/** @type {import('vite').UserConfig} */
+const config = {
+  plugins: [
+    UnoCSS({
+      extractors: [extractorSvelte],
+    }),
+    sveltekit(),
+  ],
+}
+
+export default config;
