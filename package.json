@@ -17,5 +17,8 @@
 		"unocss": "^0.50.4",
 		"vite": "^4.0.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@prisma/client": "^4.11.0"
+	}
 }
