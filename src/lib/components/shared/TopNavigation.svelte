@@ -1,5 +1,7 @@
-<nav class="sticky top-0 flex min-h-[10vh] items-center justify-between bg-white px-5">
+<nav class="bg-white flex min-h-[10vh] px-5 top-0 sticky items-center justify-between">
 	<p>SRMS | Admin</p>
 
-	<a href="/dashboard">logout</a>
+	<form action="/logout" method="post">
+		<button>logout</button>
+	</form>
 </nav>
