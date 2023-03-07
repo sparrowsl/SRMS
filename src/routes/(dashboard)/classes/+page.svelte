@@ -1,9 +1,9 @@
 <script>
+	import dayjs from "dayjs";
 	import BreadCrumbs from "../../../lib/components/shared/BreadCrumbs.svelte";
 	import Button from "../../../lib/components/shared/Button.svelte";
 
 	export let data;
-	console.log(data.classes);
 </script>
 
 <BreadCrumbs>
@@ -28,9 +28,9 @@
 					<td class="border p-2 text-gray-700">{index + 1}</td>
 					<td class="border p-2 text-gray-700">{class_.name}</td>
 					<td class="border p-2 text-gray-700">{class_.section}</td>
-					<td class="border p-2 text-gray-700">{class_.dateCreated}</td>
+					<td class="border p-2 text-gray-700">{dayjs(class_.dateCreated).format("MMMM DD, YYYY - HH:mm A")}</td>
 					<td class="border p-2 text-gray-700 items-center">
-						<span class="flex gap-4">
+						<span class="flex text-xs gap-4">
 							<Button>Edit</Button>
 							<Button>Delete</Button>
 						</span>

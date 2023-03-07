@@ -3,7 +3,7 @@ export const links = [
 		category: "Classes",
 		subclasses: [
 			{ href: "/classes/new", text: "Add Class" },
-			{ href: "/dashboard", text: "Manage Classes" },
+			{ href: "/classes", text: "Manage Classes" },
 		],
 	},
 	{
