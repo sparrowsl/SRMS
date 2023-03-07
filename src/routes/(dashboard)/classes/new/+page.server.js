@@ -25,6 +25,6 @@ export const actions = {
 
 		if (!newClass) return { error: "Class already exists!!" };
 
-		throw redirect(302, "/dashboard");
+		throw redirect(302, "/classes");
 	},
 };
