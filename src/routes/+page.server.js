@@ -2,7 +2,7 @@ import { redirect } from "@sveltejs/kit";
 import prisma from "../lib/utils/prisma.js";
 
 /** @type {import('./$types').PageServerLoad} */
-export async function load({}) {
+export async function load({ locals }) {
 	// await prisma.admin.create({
 	// 	data: {
 	// 		id: crypto.randomUUID(),
@@ -11,6 +11,7 @@ export async function load({}) {
 	// 		password: "password",
 	// 	},
 	// });
+	if (locals.admin) throw redirect(302, "/dashboard");
 }
 
 /** @type {import('./$types').Actions} */

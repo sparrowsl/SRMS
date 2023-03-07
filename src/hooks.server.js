@@ -17,8 +17,6 @@ export const handle = async ({ resolve, event }) => {
 		},
 	});
 
-	console.log(admin);
-
 	if (admin) event.locals.admin = admin;
 
 	return await resolve(event);
