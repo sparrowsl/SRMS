@@ -1,9 +1,11 @@
 <section class="shadow">
-	<div class="p-5">
-		<h1 class="text-2xl">Dashboard</h1>
-	</div>
+	<h1 class="p-5 text-2xl">
+		<slot name="title">Dashboard</slot>
+	</h1>
 
 	<hr />
 	<!-- breadcrumbs link -->
-	<a href="/dashboard" class="block w-fit px-5 py-3 text-sm text-gray-500">Home</a>
+	<slot name="breadcrumbs">
+		<a href="/dashboard" class="text-sm w-fit py-3 px-5 text-gray-500 block">Home</a>
+	</slot>
 </section>

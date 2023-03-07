@@ -1,7 +1,7 @@
 <script>
-	import { enhance, applyAction } from '$app/forms';
-	import Button from '../lib/components/shared/Button.svelte';
-	import Input from '../lib/components/shared/Input.svelte';
+	import { enhance, applyAction } from "$app/forms";
+	import Button from "../lib/components/shared/Button.svelte";
+	import Input from "../lib/components/shared/Input.svelte";
 
 	export let form;
 	let validating = false;
@@ -15,8 +15,8 @@
 		use:enhance={({ form }) => {
 			validating = true;
 			return async ({ result, update }) => {
-				if (result.type === 'success') form.reset();
-				if (result.type === 'invalid') await applyAction(form);
+				if (result.type === "success") form.reset();
+				if (result.type === "invalid") await applyAction(form);
 				update();
 				validating = false;
 			};
@@ -26,8 +26,8 @@
 
 		<fieldset class="flex flex-col p-10 gap-5">
 			<div>
-				<label for="">Email</label>
-				<Input type="email" placeholder="john@gmail.com" name="email" />
+				<label for="">Username</label>
+				<Input placeholder="john" name="username" />
 			</div>
 
 			<div>
@@ -36,7 +36,7 @@
 			</div>
 
 			<Button type="submit" classes="text-center w-full text-sm p-2 rounded bg-gray-600 text-white">
-				{validating ? '...' : 'Login'}
+				{validating ? "..." : "Login"}
 			</Button>
 
 			{#if form?.error}

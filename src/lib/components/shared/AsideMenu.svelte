@@ -1,25 +1,25 @@
 <script>
 	import AsideMenuProfile from '../AsideMenuProfile.svelte';
-	import { links } from '../../utils/sideLinks';
+	import { links } from '../../utils/sideLinks.js';
 </script>
 
-<aside class="block h-screen bg-gray-100 py-10 px-5">
+<aside class="h-screen bg-gray-100 py-10 px-5 overflow-y-scroll block">
 	<AsideMenuProfile />
 
 	<!-- Dashboard Link -->
 	<div class="my-5">
-		<h3 class="uppercase font-light text-sm mb-2">Main Category</h3>
+		<h3 class="font-light text-sm mb-2 uppercase">Main Category</h3>
 		<a href="/dashboard">Dashboard</a>
 	</div>
 
 	<!-- Apperance Link -->
 	<div>
-		<h3 class="uppercase font-light text-sm mb-3">Apperance</h3>
+		<h3 class="font-light text-sm mb-3 uppercase">Apperance</h3>
 
 		{#each links as { category, subclasses }}
 			<details open>
-				<summary>{category}</summary>
-				<div class="indent-8 grid gap-2 py-2">
+				<summary class="hover:cursor-pointer">{category}</summary>
+				<div class="grid py-2 gap-2 indent-4">
 					{#each subclasses as { href, text }}
 						<a class="block" {href}>{text}</a>
 					{/each}

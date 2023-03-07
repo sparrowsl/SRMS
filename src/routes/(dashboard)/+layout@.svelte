@@ -4,7 +4,7 @@
 </script>
 
 <TopNavigation />
-<div class="grid grid-cols-[minmax(300px,max-content),1fr]">
+<div class="grid grid-cols-[max-content_1fr]">
 	<AsideMenu />
 	<main>
 		<slot />

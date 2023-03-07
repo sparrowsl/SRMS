@@ -6,6 +6,7 @@ export async function load({}) {
 	// await prisma.admin.create({
 	// 	data: {
 	// 		id: crypto.randomUUID(),
+	// 		username: "John",
 	// 		email: "john@gmail.com",
 	// 		password: "password",
 	// 	},
@@ -16,17 +17,26 @@ export async function load({}) {
 export const actions = {
 	default: async ({ cookies, request }) => {
 		const form = await request.formData();
-		const email = form.get("email");
+		const username = form.get("username");
 		const password = form.get("password");
 
 		const admin = await prisma.admin.findFirst({
 			where: {
-				email,
+				username,
 				password,
 			},
 		});
 
 		if (!admin) return { error: "Invalid Username and Password!" };
+
+		await prisma.admin.update({
+			data: {
+				lastLoggedIn: new Date(),
+			},
+			where: {
+				username,
+			},
+		});
 
 		cookies.set("session", admin.id, {
 			path: "/",
