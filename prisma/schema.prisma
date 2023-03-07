@@ -21,3 +21,14 @@ model Admin {
   @@index([username])
   @@map("admin")
 }
+
+// Add @db.VARCHAR(1) on name
+model Class {
+  id          String   @id @unique @default(uuid())
+  name        String   @unique
+  section     String?
+  dateCreated DateTime @default(now())
+
+  @@index([name])
+  @@map("classes")
+}
