@@ -18,5 +18,6 @@ model Admin {
   lastLoggedIn DateTime @default(now()) @updatedAt
   dateJoined   DateTime @default(now())
 
+  @@index([username])
   @@map("admin")
 }
