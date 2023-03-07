@@ -1,8 +1,10 @@
 <script>
+	import { enhance } from "$app/forms";
 	import Icon from "@iconify/svelte";
 	import dayjs from "dayjs";
 	import BreadCrumbs from "../../../lib/components/shared/BreadCrumbs.svelte";
 	import Button from "../../../lib/components/shared/Button.svelte";
+	import Input from "../../../lib/components/shared/Input.svelte";
 
 	export let data;
 </script>
@@ -33,7 +35,10 @@
 					<td class="px-2 text-gray-700 items-center ">
 						<span class="flex h-full gap-4">
 							<a href="/classes/edit?id={class_.id}"><Icon icon="bi:pen-fill" class="text-blue-400" /></a>
-							<Button><Icon icon="mdi:trash" class="text-red-400" /></Button>
+							<form action="/classes?/deleteClass" method="post" use:enhance>
+								<Input type="hidden" name="id" value={class_.id} />
+								<Button><Icon icon="mdi:trash" class="text-red-400" /></Button>
+							</form>
 						</span>
 					</td>
 				</tr>
