@@ -12,7 +12,7 @@ export const handle = async ({ resolve, event }) => {
 		select: {
 			id: true,
 			username: true,
-			// email: true,
+			email: true,
 			// dateJoined:true
 		},
 	});

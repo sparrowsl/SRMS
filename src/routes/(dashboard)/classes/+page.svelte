@@ -1,4 +1,5 @@
 <script>
+	import Icon from "@iconify/svelte";
 	import dayjs from "dayjs";
 	import BreadCrumbs from "../../../lib/components/shared/BreadCrumbs.svelte";
 	import Button from "../../../lib/components/shared/Button.svelte";
