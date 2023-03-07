@@ -1,10 +1,10 @@
 <script>
-	export let type = 'text';
+	export let type = "text";
 	export let required = true;
-	export let value = '';
-	export let placeholder = 'enter something here';
-	export let classes = '';
-	export let name = '';
+	export let value = "";
+	export let placeholder = "enter something here";
+	export let classes = "";
+	export let name = "";
 	export let disabled = false;
 </script>
 
@@ -12,6 +12,7 @@
 	{type}
 	{required}
 	{name}
+	{value}
 	{disabled}
 	on:input={(event) => (value = event.target.value)}
 	{placeholder}

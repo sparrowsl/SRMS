@@ -1,6 +1,6 @@
 <script>
-	export let amount;
-	export let text;
+	export let amount = 0;
+	export let text = "";
 </script>
 
 <div class="rounded border bg-gray-50 px-5 py-7">
