@@ -13,19 +13,18 @@ export const actions = {
 		const name = form.get("class_name");
 		const section = form.get("class_section");
 
-		let newClass = null;
-		try {
-			newClass = await prisma.class.create({
+		const newClass = await prisma.class
+			.create({
 				data: {
 					id: crypto.randomUUID(),
 					name,
 					section,
 				},
-			});
-		} catch (e) {
-			return { error: "Class already exists!!" };
-		}
+			})
+			.catch((e) => null);
 
-		if (newClass) throw redirect(302, "/dashboard");
+		if (!newClass) return { error: "Class already exists!!" };
+
+		throw redirect(302, "/dashboard");
 	},
 };
