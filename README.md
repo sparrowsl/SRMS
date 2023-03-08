@@ -1,38 +1,70 @@
-# create-svelte
+# S.R.M.S (Student Result Management System)
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A web application where teacher can CRUD (Create, Update, Delete) classes, students, subjects, and result. Then students can view there result and download as PDF or Excel file
 
-## Creating a project
+## Table of contents
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  <!-- - [Screenshot](#screenshot) -->
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Continued development](#continued-development)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Overview
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+### The challenge
 
-## Developing
+Admin should be able to:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- Add new classes, students, subjects
+- Update classes, students, subjects
+- Delete classes, students, subjects
 
-```bash
-npm run dev
+Students should be able to:
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- Search for their result using their ID
+- Download their result in different format (Excel & PDF)
 
-## Building
+<!-- ### Screenshot
 
-To create a production version of your app:
+![](./screenshot.jpg) -->
 
-```bash
-npm run build
-```
+### Links
 
-You can preview the production build with `npm run preview`.
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## My process
+
+### Built with
+
+- Semantic HTML5 & CSS
+- [Svelte](https://svelte.dev/) - JS Framework
+- [SvelteKit](https://kit.svelte.dev/) - Svelte Framework
+- [UnoCSS](https://uno.antfu.me//) - CSS Engine for styles
+- [Prisma](https://www.prisma.io/) - Database ORM
+- [Iconify](https://iconify.design/) - Icon library
+
+### Continued development
+
+These are some areas I plan to improve on:
+
+- SvelteKit authentication practices
+- Prisma schema
+- Design with UnoCSS
+
+## Author
+
+- Website - [Benjamin Thorpe](https://www.benthorpe.dev)
+- Frontend Mentor - [@benjithorpe](https://www.frontendmentor.io/profile/benjithorpe)
+- GitHub - [@benjithorpe](https://www.twitter.com/benjithorpe)
+
+<!--
+## Acknowledgments
+
+This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+ -->
