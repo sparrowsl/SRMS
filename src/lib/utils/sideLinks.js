@@ -9,8 +9,8 @@ export const links = [
 	{
 		category: "Subjects",
 		subclasses: [
-			{ href: "/dashboard", text: "Add Subject" },
-			{ href: "/dashboard", text: "Manage Subjects" },
+			{ href: "/subjects/new", text: "Add Subject" },
+			{ href: "/subjects", text: "Manage Subjects" },
 		],
 	},
 	{

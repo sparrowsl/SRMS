@@ -32,3 +32,14 @@ model Class {
   @@index([name])
   @@map("classes")
 }
+
+model Subject {
+  id          String   @id @unique @default(uuid())
+  name        String   @unique
+  subjectCode String   @unique
+  dateCreated DateTime @default(now())
+  lastUpdated DateTime @updatedAt
+
+  @@index([name, subjectCode])
+  @@map("subjects")
+}

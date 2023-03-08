@@ -6,11 +6,13 @@
 	import Button from "../../../lib/components/shared/Button.svelte";
 	import Input from "../../../lib/components/shared/Input.svelte";
 
+	/** @type {import('./$types').PageData} */
 	export let data;
+	console.log(data);
 </script>
 
 <BreadCrumbs>
-	<span slot="title">Manage Classes</span>
+	<span slot="title">Manage Subjects</span>
 </BreadCrumbs>
 
 <section class="mt-5 p-4">
@@ -18,27 +20,31 @@
 		<thead>
 			<tr class="border bg-gray-600 text-left text-white">
 				<th class="p-2">ID</th>
-				<th class="p-2">Class Name</th>
-				<th class="p-2">Section</th>
+				<th class="p-2">Subject Name</th>
+				<th class="p-2">Subject Code</th>
 				<th class="p-2">Date Added</th>
+				<th class="p-2">Last Updated</th>
 				<th>Actions</th>
 			</tr>
 		</thead>
 
 		<tbody>
-			{#each data.classes as class_, index (class_.id)}
+			{#each data.subjects as subject, index (subject.id)}
 				<tr class="group">
 					<td class="border p-2 text-gray-700">{index + 1}</td>
-					<td class="border p-2 text-gray-700">{class_.name}</td>
-					<td class="border p-2 text-gray-700">{class_.section}</td>
-					<td class="border p-2 text-gray-700">
-						{dayjs(class_.dateCreated).format("MMMM DD, YYYY - HH:mm A")}
+					<td class="border p-2 text-gray-700">{subject.name}</td>
+					<td class="border p-2 text-gray-700">{subject.subjectCode}</td>
+					<td class="border text-sm p-2 text-gray-700">
+						{dayjs(subject.dateCreated).format("MMM DD, YYYY - HH:mm a")}
+					</td>
+					<td class="border text-sm p-2 text-gray-700">
+						{dayjs(subject.lastUpdated).format("MMM DD, YYYY - HH:mm a")}
 					</td>
 					<td class="opacity-0 px-2 text-gray-700 items-center group-hover:opacity-100">
 						<span class="flex h-full gap-4">
-							<a href="/classes/edit?id={class_.id}"><Icon icon="bi:pen-fill" class="text-blue-400" /></a>
-							<form action="/classes?/deleteClass" method="post" use:enhance>
-								<Input type="hidden" name="id" value={class_.id} />
+							<a href="/subjects/edit?id={subject.id}"><Icon icon="bi:pen-fill" class="text-blue-400" /></a>
+							<form action="/subjects?/deleteSubject" method="post" use:enhance>
+								<Input type="hidden" name="id" value={subject.id} />
 								<Button><Icon icon="mdi:trash" class="text-red-400" /></Button>
 							</form>
 						</span>
