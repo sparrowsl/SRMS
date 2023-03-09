@@ -19,8 +19,8 @@
 		{
 			category: "Students",
 			subclasses: [
-				{ href: "/dashboard", text: "Add Student" },
-				{ href: "/dashboard", text: "Manage Students" },
+				{ href: "/students/new", text: "Add Student" },
+				{ href: "/students", text: "Manage Students" },
 			],
 		},
 		{

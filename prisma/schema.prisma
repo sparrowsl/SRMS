@@ -22,7 +22,6 @@ model Admin {
   @@map("admin")
 }
 
-// Add @db.VARCHAR(1) on section
 model Class {
   id          String    @id @unique @default(uuid())
   name        String    @unique
@@ -45,19 +44,18 @@ model Subject {
   @@map("subjects")
 }
 
-// Add @db.VARCHAR(1) on gender
 model Student {
   id             String   @id @unique @default(uuid())
   name           String   @unique
-  roll           Int      @unique
+  roll           String   @unique
   email          String?  @unique
   gender         String
   dateOfBirth    DateTime
   dateRegistered DateTime @default(now())
   lastUpdated    DateTime @updatedAt
 
-  classId String
-  class   Class  @relation(fields: [classId], references: [id])
+  classId String?
+  class   Class?  @relation(fields: [classId], references: [id])
 
   @@index([name, roll, email])
   @@map("students")
