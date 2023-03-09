@@ -1,13 +1,11 @@
 <script>
 	import { enhance } from "$app/forms";
 	import Icon from "@iconify/svelte";
-	import dayjs from "dayjs";
 	import BreadCrumbs from "../../../lib/components/shared/BreadCrumbs.svelte";
 	import Button from "../../../lib/components/shared/Button.svelte";
 	import Input from "../../../lib/components/shared/Input.svelte";
 
 	export let data;
-	console.log(data.students);
 </script>
 
 <BreadCrumbs>
@@ -20,7 +18,7 @@
 			<tr class="border bg-gray-600 text-left text-white">
 				<th class="p-2">ID</th>
 				<th class="p-2">Name</th>
-				<th class="p-2">Roll</th>
+				<th class="p-2">Roll ID</th>
 				<th class="p-2">Email</th>
 				<th class="p-2">Gender</th>
 				<th>Actions</th>
