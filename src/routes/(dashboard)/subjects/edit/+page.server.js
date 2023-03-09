@@ -2,28 +2,43 @@ import { redirect } from "@sveltejs/kit";
 import prisma from "../../../../lib/utils/prisma.js";
 
 /** @type {import('./$types').PageServerLoad} */
-export async function load({}) {
-	// await prisma.class.deleteMany();
+export async function load({ url }) {
+	const id = url.searchParams.get("id");
+
+	const subject = await prisma.subject.findUnique({
+		where: {
+			id,
+		},
+	});
+
+	// TODO: Throw error if Id is not found...
+
+	return {
+		subject,
+	};
 }
 
 /** @type {import('./$types').Actions} */
 export const actions = {
 	default: async ({ request }) => {
 		const form = await request.formData();
+		const id = form.get("id");
 		const name = form.get("subject_name");
 		const subjectCode = form.get("subject_code");
 
-		const newClass = await prisma.subject
-			.create({
+		const updated = await prisma.subject
+			.update({
 				data: {
-					id: crypto.randomUUID(),
-					subjectCode,
 					name,
+					subjectCode,
+				},
+				where: {
+					id,
 				},
 			})
 			.catch((e) => false);
 
-		if (!newClass) return { error: "Subject already exists!!" };
+		if (!updated) return { error: "Subject already exists, cannot update!!" };
 
 		throw redirect(302, "/subjects");
 	},

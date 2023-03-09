@@ -1,6 +1,36 @@
 <script>
-	import AsideMenuProfile from '../AsideMenuProfile.svelte';
-	import { links } from '../../utils/sideLinks.js';
+	import AsideMenuProfile from "../AsideMenuProfile.svelte";
+
+	const links = [
+		{
+			category: "Classes",
+			subclasses: [
+				{ href: "/classes/new", text: "Add Class" },
+				{ href: "/classes", text: "Manage Classes" },
+			],
+		},
+		{
+			category: "Subjects",
+			subclasses: [
+				{ href: "/subjects/new", text: "Add Subject" },
+				{ href: "/subjects", text: "Manage Subjects" },
+			],
+		},
+		{
+			category: "Students",
+			subclasses: [
+				{ href: "/dashboard", text: "Add Student" },
+				{ href: "/dashboard", text: "Manage Students" },
+			],
+		},
+		{
+			category: "Results",
+			subclasses: [
+				{ href: "/dashboard", text: "Add Result" },
+				{ href: "/dashboard", text: "Manage Results" },
+			],
+		},
+	];
 </script>
 
 <aside class="h-screen bg-gray-100 py-10 px-5 overflow-y-scroll block">
@@ -21,7 +51,7 @@
 				<summary class="hover:cursor-pointer">{category}</summary>
 				<div class="grid py-2 gap-2 indent-4">
 					{#each subclasses as { href, text }}
-						<a class="block" {href}>{text}</a>
+						<a class="block" href="{href}">{text}</a>
 					{/each}
 				</div>
 			</details>

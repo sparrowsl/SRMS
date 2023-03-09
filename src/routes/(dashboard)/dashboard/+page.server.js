@@ -4,5 +4,6 @@ import prisma from "../../../lib/utils/prisma.js";
 export async function load({}) {
 	return {
 		totalClasses: await prisma.class.count(),
+		totalSubjects: await prisma.subject.count(),
 	};
 }

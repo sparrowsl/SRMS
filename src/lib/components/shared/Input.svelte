@@ -9,12 +9,12 @@
 </script>
 
 <input
-	{type}
-	{required}
-	{name}
-	{value}
-	{disabled}
-	on:input={(event) => (value = event.target.value)}
-	{placeholder}
+	type="{type}"
+	required="{required}"
+	name="{name}"
+	value="{value}"
+	disabled="{disabled}"
+	on:input="{(event) => (value = event.target.value)}"
+	placeholder="{placeholder}"
 	class="{classes} block w-full rounded border border-gray-200 p-2 text-sm text-gray-600"
 />

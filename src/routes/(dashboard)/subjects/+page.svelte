@@ -6,9 +6,7 @@
 	import Button from "../../../lib/components/shared/Button.svelte";
 	import Input from "../../../lib/components/shared/Input.svelte";
 
-	/** @type {import('./$types').PageData} */
 	export let data;
-	console.log(data);
 </script>
 
 <BreadCrumbs>
@@ -42,9 +40,11 @@
 					</td>
 					<td class="opacity-0 px-2 text-gray-700 items-center group-hover:opacity-100">
 						<span class="flex h-full gap-4">
-							<a href="/subjects/edit?id={subject.id}"><Icon icon="bi:pen-fill" class="text-blue-400" /></a>
+							<a href="/subjects/edit?id={subject.id}"
+								><Icon icon="bi:pen-fill" class="text-blue-400" /></a
+							>
 							<form action="/subjects?/deleteSubject" method="post" use:enhance>
-								<Input type="hidden" name="id" value={subject.id} />
+								<Input type="hidden" name="id" value="{subject.id}" />
 								<Button><Icon icon="mdi:trash" class="text-red-400" /></Button>
 							</form>
 						</span>
