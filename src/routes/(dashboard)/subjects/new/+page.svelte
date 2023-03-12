@@ -9,8 +9,6 @@
 	export let data;
 	let subjectCode = "";
 
-	console.log(data);
-
 	const generateCode = () => (subjectCode = crypto.randomUUID().slice(0, 5).toUpperCase());
 </script>
 
@@ -49,6 +47,7 @@
 				{#await data.streamed.classes}
 					<option value="" disabled>--------</option>
 				{:then classes}
+					<option value=""> - - - - - - - - </option>
 					{#each classes as class_ (class_.id)}
 						<option value="{class_.id}">{class_.name} {class_?.section ?? ""}</option>
 					{/each}
