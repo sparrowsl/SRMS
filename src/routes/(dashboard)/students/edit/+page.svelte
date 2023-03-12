@@ -7,6 +7,7 @@
 
 	export let data;
 	export let form;
+	console.log(data.student);
 </script>
 
 <BreadCrumbs>
@@ -28,12 +29,50 @@
 		</div>
 
 		<div>
+			<label for="">Roll ID</label>
+			<Input
+				disabled="{true}"
+				value="{data.student.roll}"
+				classes="disabled:cursor-not-allowed tracking-0.2 font-bold"
+			/>
+		</div>
+
+		<div>
+			<label for="">Registered On</label>
+			<Input
+				disabled="{true}"
+				value="{dayjs(data.student.dateRegistered).format('MMMM DD, YYYY')}"
+				classes="disabled:cursor-not-allowed"
+			/>
+		</div>
+
+		<div>
 			<label for="">Date of Birth</label>
 			<Input
 				type="date"
 				name="dateOfBirth"
 				value="{dayjs(data.student.dateOfBirth).format('YYYY-MM-DD')}"
 			/>
+		</div>
+
+		<div>
+			<label for="">Class</label>
+			<select
+				name="classId"
+				class="border rounded border-gray-200 text-sm w-full p-2 text-gray-600 block"
+			>
+				{#await data.streamed.classes}
+					<option value="" disabled>--------</option>
+				{:then classes}
+					<option value=""> - - - - - - - - </option>
+					{#each classes as class_ (class_.id)}
+						<option value="{class_.id}" selected="{class_.id === data.student.classId}">
+							{class_.name}
+							{class_?.section ?? ""}
+						</option>
+					{/each}
+				{/await}
+			</select>
 		</div>
 
 		{#if form?.error}

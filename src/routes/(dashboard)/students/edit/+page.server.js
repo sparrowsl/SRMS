@@ -15,6 +15,7 @@ export async function load({ url }) {
 
 	return {
 		student,
+		streamed: { classes: await prisma.class.findMany() },
 	};
 }
 
@@ -26,6 +27,7 @@ export const actions = {
 		const name = form.get("name");
 		const email = form.get("email");
 		const dateOfBirth = form.get("dateOfBirth");
+		const classId = form.get("classId") || null;
 
 		const updated = await prisma.student
 			.update({
@@ -33,6 +35,7 @@ export const actions = {
 					name,
 					email,
 					dateOfBirth: new Date(dateOfBirth),
+					classId,
 				},
 				where: {
 					id,

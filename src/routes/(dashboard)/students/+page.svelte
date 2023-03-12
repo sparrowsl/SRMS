@@ -19,8 +19,8 @@
 				<th class="p-2">ID</th>
 				<th class="p-2">Name</th>
 				<th class="p-2">Roll ID</th>
+				<th class="p-2">Class</th>
 				<th class="p-2">Email</th>
-				<th class="p-2">Gender</th>
 				<th>Actions</th>
 			</tr>
 		</thead>
@@ -31,8 +31,11 @@
 					<td class="border p-2 text-gray-700">{index + 1}</td>
 					<td class="border p-2 text-gray-700">{student.name}</td>
 					<td class="border p-2 text-gray-700">{student.roll}</td>
+					<td class="border p-2 text-gray-700">
+						{student.class?.name ?? "N/A"}
+						{student.class?.section ?? ""}
+					</td>
 					<td class="border p-2 text-gray-700">{student.email}</td>
-					<td class="border p-2 text-gray-700">{student.gender}</td>
 					<td class="opacity-0 px-2 text-gray-700 items-center group-hover:opacity-100">
 						<span class="flex h-full gap-4">
 							<a href="/students/edit?id={student.id}">
