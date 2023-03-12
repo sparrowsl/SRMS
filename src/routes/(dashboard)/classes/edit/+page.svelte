@@ -10,7 +10,7 @@
 </script>
 
 <BreadCrumbs>
-	<span slot="title">Edit Class: {data.editClass.name} </span>
+	<span slot="title">Edit Class: {data.editClass?.name} </span>
 </BreadCrumbs>
 
 <form action="?/updateClass" method="post" class="mx-auto max-w-xl mt-10" use:enhance>
@@ -31,6 +31,7 @@
 						class="flex items-center"
 						use:enhance
 					>
+						<Input type="hidden" name="classId" value="{data.editClass.id}" />
 						<Input type="hidden" value="{subject.id}" name="subject_id" />
 						<span class="min-w-40 text-gray-600">{subject.name}</span>
 						<Button>

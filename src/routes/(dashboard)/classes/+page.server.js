@@ -4,11 +4,18 @@ import prisma from "../../../lib/utils/prisma.js";
 /** @type {import('./$types').PageServerLoad} */
 export async function load({}) {
 	const classes = await prisma.class.findMany({
-		include: {
-			students: true,
-			subjects: true,
+		select: {
+			id: true,
+			name: true,
+			_count: {
+				select: {
+					students: true,
+					subjects: true,
+				},
+			},
 		},
 	});
+
 	return { classes };
 }
 
@@ -18,7 +25,7 @@ export const actions = {
 		const form = await request.formData();
 		const id = form.get("id");
 
-		const deleted = await prisma.class
+		await prisma.class
 			.delete({
 				where: {
 					id,

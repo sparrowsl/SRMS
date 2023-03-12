@@ -51,11 +51,19 @@ export const actions = {
 
 	removeSubject: async ({ request }) => {
 		const form = await request.formData();
-		const id = form.get("subject_id");
+		const subjectId = form.get("subject_id");
+		const classId = form.get("classId");
 
-		await prisma.subject.delete({
+		await prisma.subject.update({
 			where: {
-				id,
+				id: subjectId,
+			},
+			data: {
+				classes: {
+					disconnect: {
+						id: classId,
+					},
+				},
 			},
 		});
 	},

@@ -29,16 +29,16 @@
 			{#each data.classes as class_ (class_.id)}
 				<tr class="group">
 					<td class="border p-2 text-gray-700">{class_.name}</td>
-					<td class="border p-2 text-gray-700">{class_.subjects.length}</td>
-					<td class="border p-2 text-gray-700">{class_.students.length}</td>
+					<td class="border p-2 text-gray-700">{class_._count.subjects}</td>
+					<td class="border p-2 text-gray-700">{class_._count.students}</td>
 					<td class="border p-2 text-gray-700">
 						{dayjs(class_.dateCreated).format("MMMM DD, YYYY - HH:mm A")}
 					</td>
 					<td class="opacity-0 px-2 text-gray-700 items-center group-hover:opacity-100">
 						<span class="flex h-full gap-4">
-							<a href="/classes/edit?id={class_.id}"
-								><Icon icon="bi:pen-fill" class="text-blue-400" /></a
-							>
+							<a href="/classes/edit?id={class_.id}">
+								<Icon icon="bi:pen-fill" class="text-blue-400" />
+							</a>
 							<form action="/classes?/deleteClass" method="post" use:enhance>
 								<Input type="hidden" name="id" value="{class_.id}" />
 								<Button><Icon icon="mdi:trash" class="text-red-400" /></Button>
