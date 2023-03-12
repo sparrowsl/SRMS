@@ -19,7 +19,8 @@
 			<tr class="border bg-gray-600 text-left text-white">
 				<th class="p-2">ID</th>
 				<th class="p-2">Class Name</th>
-				<th class="p-2">Section</th>
+				<th class="p-2">Subjects</th>
+				<th class="p-2">Students</th>
 				<th class="p-2">Date Added</th>
 				<th>Actions</th>
 			</tr>
@@ -29,16 +30,19 @@
 			{#each data.classes as class_, index (class_.id)}
 				<tr class="group">
 					<td class="border p-2 text-gray-700">{index + 1}</td>
-					<td class="border p-2 text-gray-700">{class_.name}</td>
-					<td class="border p-2 text-gray-700">{class_.section}</td>
+					<td class="border p-2 text-gray-700">{class_.name} {class_.section}</td>
+					<td class="border p-2 text-gray-700">{class_.subjects.length}</td>
+					<td class="border p-2 text-gray-700">{class_.students.length}</td>
 					<td class="border p-2 text-gray-700">
 						{dayjs(class_.dateCreated).format("MMMM DD, YYYY - HH:mm A")}
 					</td>
 					<td class="opacity-0 px-2 text-gray-700 items-center group-hover:opacity-100">
 						<span class="flex h-full gap-4">
-							<a href="/classes/edit?id={class_.id}"><Icon icon="bi:pen-fill" class="text-blue-400" /></a>
+							<a href="/classes/edit?id={class_.id}"
+								><Icon icon="bi:pen-fill" class="text-blue-400" /></a
+							>
 							<form action="/classes?/deleteClass" method="post" use:enhance>
-								<Input type="hidden" name="id" value={class_.id} />
+								<Input type="hidden" name="id" value="{class_.id}" />
 								<Button><Icon icon="mdi:trash" class="text-red-400" /></Button>
 							</form>
 						</span>

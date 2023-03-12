@@ -6,7 +6,10 @@
 	import Input from "../../../../lib/components/shared/Input.svelte";
 
 	export let form;
+	export let data;
 	let subjectCode = "";
+
+	console.log(data);
 
 	const generateCode = () => (subjectCode = crypto.randomUUID().slice(0, 5).toUpperCase());
 </script>
@@ -33,9 +36,24 @@
 				name="subject_code"
 				placeholder="Eg:- 86DD4"
 				bind:value="{subjectCode}"
-				required="{false}"
 				classes="tracking-0.5"
 			/>
+		</div>
+
+		<div>
+			<label for="">Class</label>
+			<select
+				name="classId"
+				class="border rounded border-gray-200 text-sm w-full p-2 text-gray-600 block"
+			>
+				{#await data.streamed.classes}
+					<option value="" disabled>--------</option>
+				{:then classes}
+					{#each classes as class_ (class_.id)}
+						<option value="{class_.id}">{class_.name} {class_?.section ?? ""}</option>
+					{/each}
+				{/await}
+			</select>
 		</div>
 
 		{#if form?.error}

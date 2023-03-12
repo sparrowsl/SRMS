@@ -3,7 +3,7 @@ import prisma from "../../../../lib/utils/prisma.js";
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({}) {
-	// await prisma.class.deleteMany();
+	return { streamed: { classes: await prisma.class.findMany() } };
 }
 
 /** @type {import('./$types').Actions} */
@@ -12,6 +12,7 @@ export const actions = {
 		const form = await request.formData();
 		const name = form.get("subject_name");
 		const subjectCode = form.get("subject_code");
+		const classId = form.get("classId");
 
 		const newClass = await prisma.subject
 			.create({
@@ -19,6 +20,7 @@ export const actions = {
 					id: crypto.randomUUID(),
 					subjectCode,
 					name,
+					classId,
 				},
 			})
 			.catch((e) => false);

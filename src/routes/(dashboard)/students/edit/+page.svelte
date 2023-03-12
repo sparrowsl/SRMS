@@ -23,7 +23,7 @@
 		</div>
 
 		<div>
-			<label for="">Student Emial</label>
+			<label for="">Student Email</label>
 			<Input type="email" name="email" placeholder="john@gmail.com" value="{data.student.email}" />
 		</div>
 

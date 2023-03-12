@@ -13,7 +13,16 @@ export async function load() {
 	// 	},
 	// });
 
-	const subjects = await prisma.subject.findMany();
+	const subjects = await prisma.subject.findMany({
+		include: {
+			class: {
+				select: {
+					name: true,
+					section: true,
+				},
+			},
+		},
+	});
 
 	return { subjects };
 }

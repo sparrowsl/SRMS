@@ -15,6 +15,7 @@ export async function load({ url }) {
 
 	return {
 		subject,
+		streamed: { classes: await prisma.class.findMany() },
 	};
 }
 
@@ -25,12 +26,14 @@ export const actions = {
 		const id = form.get("id");
 		const name = form.get("subject_name");
 		const subjectCode = form.get("subject_code");
+		const classId = form.get("classId");
 
 		const updated = await prisma.subject
 			.update({
 				data: {
 					name,
 					subjectCode,
+					classId,
 				},
 				where: {
 					id,

@@ -31,12 +31,26 @@
 					<Icon icon="ic:sharp-loop" class="text-2xl text-gray-500 hover:text-blue-500" />
 				</Button>
 			</label>
-			<Input
-				name="subject_code"
-				placeholder="Eg:- 86DD4"
-				required="{false}"
-				bind:value="{subjectCode}"
-			/>
+			<Input name="subject_code" placeholder="Eg:- 86DD4" bind:value="{subjectCode}" />
+		</div>
+
+		<div>
+			<label for="">Class</label>
+			<select
+				name="classId"
+				class="border rounded border-gray-200 text-sm w-full p-2 text-gray-600 block"
+			>
+				{#await data.streamed.classes}
+					<option value="" disabled>--------</option>
+				{:then classes}
+					{#each classes as class_ (class_.id)}
+						<option value="{class_.id}" selected="{class_.id === data.subject.classId}">
+							{class_.name}
+							{class_?.section ?? ""}
+						</option>
+					{/each}
+				{/await}
+			</select>
 		</div>
 
 		{#if form?.error}

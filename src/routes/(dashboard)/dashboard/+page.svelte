@@ -8,7 +8,11 @@
 <BreadCrumbs />
 
 <section class="mt-10 grid px-5 gap-5 grid-cols-4">
-	<DashboardCard stat="{1}" text="Registered Students" icon="mdi:people-group-outline" />
+	<DashboardCard
+		stat="{data.totalStudents}"
+		text="Registered Students"
+		icon="mdi:people-group-outline"
+	/>
 	<DashboardCard
 		stat="{data.totalSubjects}"
 		text="Subjects Listed"

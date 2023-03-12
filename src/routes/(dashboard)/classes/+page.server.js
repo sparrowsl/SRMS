@@ -3,7 +3,12 @@ import prisma from "../../../lib/utils/prisma.js";
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({}) {
-	const classes = await prisma.class.findMany();
+	const classes = await prisma.class.findMany({
+		include: {
+			students: true,
+			subjects: true,
+		},
+	});
 	return { classes };
 }
 
