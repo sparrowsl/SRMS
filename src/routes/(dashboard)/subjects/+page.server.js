@@ -3,19 +3,9 @@ import prisma from "../../../lib/utils/prisma.js";
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {
-	// await prisma.subject.deleteMany();
-
-	// await prisma.subject.create({
-	// 	data: {
-	// 		id: crypto.randomUUID(),
-	// 		subjectCode: crypto.randomUUID().split("-")[crypto.randomUUID().split("-").length - 1],
-	// 		name: "Java",
-	// 	},
-	// });
-
 	const subjects = await prisma.subject.findMany({
 		include: {
-			class: {
+			classes: {
 				select: {
 					name: true,
 					section: true,

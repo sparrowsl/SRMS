@@ -9,6 +9,14 @@ export async function load({ url }) {
 		where: {
 			id,
 		},
+		include: {
+			subjects: {
+				select: {
+					id: true,
+					name: true,
+				},
+			},
+		},
 	});
 
 	// TODO: Throw error if Id is not found...
@@ -20,17 +28,15 @@ export async function load({ url }) {
 
 /** @type {import('./$types').Actions} */
 export const actions = {
-	default: async ({ request }) => {
+	updateClass: async ({ request }) => {
 		const form = await request.formData();
 		const id = form.get("id");
-		const name = form.get("class_name");
-		const section = form.get("class_section");
+		const name = form.get("name");
 
 		const updated = await prisma.class
 			.update({
 				data: {
 					name,
-					section,
 				},
 				where: {
 					id,
@@ -41,5 +47,16 @@ export const actions = {
 		if (!updated) return { error: "Name already exists, cannot update!!" };
 
 		throw redirect(302, "/classes");
+	},
+
+	removeSubject: async ({ request }) => {
+		const form = await request.formData();
+		const id = form.get("subject_id");
+
+		await prisma.subject.delete({
+			where: {
+				id,
+			},
+		});
 	},
 };

@@ -7,7 +7,6 @@
 
 	export let data;
 	export let form;
-	console.log(data.student);
 </script>
 
 <BreadCrumbs>

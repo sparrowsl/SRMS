@@ -15,12 +15,7 @@
 	<fieldset class="grid gap-5">
 		<div>
 			<label for="">Class Name</label>
-			<Input name="class_name" placeholder="Eg:- One, Two, Three" />
-		</div>
-
-		<div>
-			<label for="">Section (optional)</label>
-			<Input name="class_section" placeholder="Eg:- A, B, C" required={false} />
+			<Input name="name" placeholder="Eg:- One, Two, Three" />
 		</div>
 
 		{#if form?.error}

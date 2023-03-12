@@ -17,25 +17,18 @@
 	<table class="border-collapse w-full table-auto">
 		<thead>
 			<tr class="border bg-gray-600 text-left text-white">
-				<th class="p-2">ID</th>
 				<th class="p-2">Subject Name</th>
 				<th class="p-2">Subject Code</th>
-				<th class="p-2">Class</th>
 				<th class="p-2">Last Updated</th>
 				<th>Actions</th>
 			</tr>
 		</thead>
 
 		<tbody>
-			{#each data.subjects as subject, index (subject.id)}
+			{#each data.subjects as subject (subject.id)}
 				<tr class="group">
-					<td class="border p-2 text-gray-700">{index + 1}</td>
 					<td class="border p-2 text-gray-700">{subject.name}</td>
 					<td class="border p-2 text-gray-700">{subject.subjectCode}</td>
-					<td class="border p-2 text-gray-700">
-						{subject.class?.name ?? "N/A"}
-						{subject.class?.section ?? ""}
-					</td>
 					<td class="border text-sm p-2 text-gray-700">
 						{dayjs(subject.lastUpdated).format("MMM DD, YYYY - HH:mm a")}
 					</td>

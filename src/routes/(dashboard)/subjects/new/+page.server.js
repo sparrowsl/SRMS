@@ -12,7 +12,7 @@ export const actions = {
 		const form = await request.formData();
 		const name = form.get("subject_name");
 		const subjectCode = form.get("subject_code");
-		const classId = form.get("classId") || null;
+		const classId = form.get("classId");
 
 		const newClass = await prisma.subject
 			.create({
@@ -20,7 +20,11 @@ export const actions = {
 					id: crypto.randomUUID(),
 					subjectCode,
 					name,
-					classId,
+					classes: {
+						connect: {
+							id: classId,
+						},
+					},
 				},
 			})
 			.catch((e) => false);

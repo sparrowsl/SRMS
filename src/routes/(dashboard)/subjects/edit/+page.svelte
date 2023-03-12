@@ -43,7 +43,6 @@
 				{#await data.streamed.classes}
 					<option value="" disabled>--------</option>
 				{:then classes}
-					<option value=""> - - - - - - - - </option>
 					{#each classes as class_ (class_.id)}
 						<option value="{class_.id}" selected="{class_.id === data.subject.classId}">
 							{class_.name}

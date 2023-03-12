@@ -17,7 +17,6 @@
 	<table class="border-collapse w-full table-auto">
 		<thead>
 			<tr class="border bg-gray-600 text-left text-white">
-				<th class="p-2">ID</th>
 				<th class="p-2">Class Name</th>
 				<th class="p-2">Subjects</th>
 				<th class="p-2">Students</th>
@@ -27,10 +26,9 @@
 		</thead>
 
 		<tbody>
-			{#each data.classes as class_, index (class_.id)}
+			{#each data.classes as class_ (class_.id)}
 				<tr class="group">
-					<td class="border p-2 text-gray-700">{index + 1}</td>
-					<td class="border p-2 text-gray-700">{class_.name} {class_.section}</td>
+					<td class="border p-2 text-gray-700">{class_.name}</td>
 					<td class="border p-2 text-gray-700">{class_.subjects.length}</td>
 					<td class="border p-2 text-gray-700">{class_.students.length}</td>
 					<td class="border p-2 text-gray-700">
