@@ -23,13 +23,11 @@ model Admin {
 }
 
 model Class {
-  id          String   @id @unique @default(uuid())
-  name        String   @unique
-  section     String?
-  dateCreated DateTime @default(now())
-
-  students Student[]
-  subjects Subject[]
+  id          String    @id @unique @default(uuid())
+  name        String    @unique
+  dateCreated DateTime  @default(now())
+  students    Student[]
+  subjects    Subject[]
 
   @@index([name])
   @@map("classes")
@@ -41,9 +39,7 @@ model Subject {
   subjectCode String   @unique
   dateCreated DateTime @default(now())
   lastUpdated DateTime @updatedAt
-
-  classId String?
-  class   Class?  @relation(fields: [classId], references: [id])
+  classes     Class[]
 
   @@index([name, subjectCode])
   @@map("subjects")
