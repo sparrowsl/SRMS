@@ -26,8 +26,8 @@
 		{
 			category: "Results",
 			subclasses: [
-				{ href: "/dashboard", text: "Add Result" },
-				{ href: "/dashboard", text: "Manage Results" },
+				{ href: "/results/new", text: "Add Result" },
+				{ href: "/results", text: "Manage Results" },
 			],
 		},
 	];

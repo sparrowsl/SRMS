@@ -16,6 +16,7 @@
 <form action="" method="post" class="mx-auto max-w-xl mt-10" use:enhance>
 	<fieldset class="grid gap-5">
 		<Input type="hidden" name="id" value="{data.student.id}" />
+
 		<div>
 			<label for="">Student Name</label>
 			<Input name="name" placeholder="John Doe" value="{data.student.name}" />
